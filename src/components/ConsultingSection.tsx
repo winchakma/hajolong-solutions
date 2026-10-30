@@ -68,10 +68,9 @@ export default function ConsultingSection() {
 
         {/* Featured Strategy & Command Center Visual */}
         <div
-          className="relative w-full h-64 sm:h-80 lg:h-96 rounded-3xl overflow-hidden mb-16 border shadow-2xl group transition-all"
+          className="relative w-full h-64 sm:h-80 lg:h-96 rounded-3xl overflow-hidden mb-16 border group transition-all"
           style={{
-            borderColor: "var(--neon-cyan)",
-            boxShadow: "0 0 35px -6px var(--neon-spotlight), 0 20px 40px rgba(0,0,0,0.5)",
+            borderColor: "var(--border-glass)",
           }}
         >
           <Image
@@ -150,11 +149,10 @@ export default function ConsultingSection() {
 
         {/* Luminous Neon Action Banner */}
         <div
-          className="rounded-3xl p-8 sm:p-12 border text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden transition-all hover:scale-[1.01]"
+          className="rounded-3xl p-8 sm:p-12 border text-center max-w-4xl mx-auto relative overflow-hidden transition-all hover:scale-[1.01]"
           style={{
             backgroundColor: "var(--bg-surface)",
-            borderColor: "var(--neon-rose)",
-            boxShadow: "0 0 35px -8px var(--neon-rose), 0 20px 40px rgba(0,0,0,0.4)",
+            borderColor: "var(--border-glass)",
           }}
         >
           {/* Ambient blurred orbs */}

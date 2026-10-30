@@ -152,11 +152,10 @@ export default function HomePage() {
       <section className="py-20 border-t" style={{ borderColor: "var(--border-subtle)" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className="p-10 sm:p-14 rounded-3xl border text-center shadow-2xl relative overflow-hidden transition-all hover:scale-[1.01]"
+            className="p-10 sm:p-14 rounded-3xl border text-center relative overflow-hidden transition-all hover:scale-[1.01]"
             style={{
               backgroundColor: "var(--bg-surface)",
-              borderColor: "var(--neon-cyan)",
-              boxShadow: "0 0 30px var(--neon-spotlight), 0 20px 40px rgba(0,0,0,0.4)",
+              borderColor: "var(--border-glass)",
             }}
           >
             {/* Ambient neon decorative background light */}

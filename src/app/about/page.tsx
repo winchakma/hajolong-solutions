@@ -230,11 +230,10 @@ export default function AboutPage() {
         {/* Luminous Consultation Banner */}
         <div className="mt-20 pt-16 border-t" style={{ borderColor: "var(--border-subtle)" }}>
           <div
-            className="p-10 sm:p-14 rounded-3xl border text-center shadow-2xl relative overflow-hidden transition-all hover:scale-[1.01]"
+            className="p-10 sm:p-14 rounded-3xl border text-center relative overflow-hidden transition-all hover:scale-[1.01]"
             style={{
               backgroundColor: "var(--bg-surface)",
-              borderColor: "var(--neon-rose)",
-              boxShadow: "0 0 35px -8px var(--neon-rose), 0 20px 40px rgba(0,0,0,0.4)",
+              borderColor: "var(--border-glass)",
             }}
           >
             <div

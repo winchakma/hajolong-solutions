@@ -173,7 +173,7 @@ export default function ContactSection() {
             />
 
             <div
-              className="p-8 sm:p-10 rounded-3xl relative overflow-hidden backdrop-blur-2xl transition-all border shadow-2xl"
+              className="p-8 sm:p-10 rounded-3xl relative overflow-hidden backdrop-blur-2xl transition-all border"
               style={{
                 backgroundColor: "var(--bg-surface)",
                 borderColor: "var(--border-glass)",

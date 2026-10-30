@@ -157,11 +157,10 @@ export default function AiBotsShowcase() {
           {/* Right Column: Interactive AI Bot Simulator */}
           <div className="lg:col-span-6">
             <div
-              className="rounded-3xl border shadow-2xl p-6 sm:p-8 backdrop-blur-2xl relative overflow-hidden transition-all duration-300"
+              className="rounded-3xl border p-6 sm:p-8 backdrop-blur-2xl relative overflow-hidden transition-all duration-300"
               style={{
                 backgroundColor: "var(--bg-surface)",
-                borderColor: "var(--neon-cyan)",
-                boxShadow: "0 0 30px var(--neon-spotlight), 0 20px 40px rgba(0,0,0,0.4)",
+                borderColor: "var(--border-glass)",
               }}
             >
               {/* 3D Neural Agent Interface Visual */}
