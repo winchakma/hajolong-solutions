@@ -9,21 +9,50 @@ export default function ServicesPage() {
   const steps = [
     {
       step: "01",
+      badgeClass: "icon-peach",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35M11 8v6M8 11h6" />
+        </svg>
+      ),
       title: "Discovery & Architecture Audit",
       desc: "We analyze your current operations, user feedback, and software bottlenecks to identify high-leverage opportunities.",
     },
     {
       step: "02",
+      badgeClass: "icon-blue",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+          <polyline points="14 2 14 8 20 8" />
+          <path d="M8 13h8M8 17h5" />
+        </svg>
+      ),
       title: "Growth & Roadmap Planning",
       desc: "We formulate a clear step-by-step strategy for digital marketing, audience expansion, and software deployment.",
     },
     {
       step: "03",
+      badgeClass: "icon-lilac",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+      ),
       title: "Agile Production & Sprints",
       desc: "We execute in focused 2-week milestones with live demo previews, keeping you informed at every phase.",
     },
     {
       step: "04",
+      badgeClass: "icon-mint",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+      ),
       title: "Launch, Scale & Dedicated Support",
       desc: "We deploy to production, train your team, and provide ongoing maintenance to guarantee 99.99% system availability.",
     },
@@ -88,8 +117,13 @@ export default function ServicesPage() {
                 className="p-8 border flex flex-col justify-between"
               >
                 <div>
-                  <div className="text-2xl font-extrabold text-[var(--neon-cyan)] font-mono mb-3">
-                    {s.step}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className={`icon-badge ${s.badgeClass}`}>
+                      {s.icon}
+                    </div>
+                    <span className="text-xs font-bold text-[var(--text-muted)] font-mono">
+                      {s.step}
+                    </span>
                   </div>
                   <h4 className="text-base font-bold text-[var(--text-primary)] mb-2">
                     {s.title}

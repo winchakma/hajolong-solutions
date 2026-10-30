@@ -8,26 +8,50 @@ import Link from "next/link";
 export default function HomePage() {
   const pillars = [
     {
-      icon: "🌐",
+      badgeClass: "icon-blue",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2.5" />
+          <path d="M8 21h8M12 17v4M6 8h4m-4 3h8" />
+        </svg>
+      ),
       title: "Custom Web & Platform Development",
       desc: "Fast, responsive web applications, client portals, and e-commerce built from scratch with modern technologies.",
       link: "/solutions",
     },
     {
-      icon: "🤖",
+      badgeClass: "icon-lilac",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <rect x="4" y="6" width="16" height="12" rx="3" />
+          <path d="M12 2v4M8 2h8M9 11v2m6-2v2M9 15h6" />
+        </svg>
+      ),
       title: "Custom AI Bots & Workflow Agents",
       desc: "24/7 intelligent customer support bots, automated lead qualification, and task automation trained on your company data.",
       link: "/solutions",
       highlight: true,
     },
     {
-      icon: "✨",
+      badgeClass: "icon-peach",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+      ),
       title: "System Redesign & Modernization",
       desc: "Transforming slow, outdated, clunky legacy software into clean, intuitive, modern interfaces your team enjoys using.",
       link: "/solutions",
     },
     {
-      icon: "📈",
+      badgeClass: "icon-mint",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M3 17l6-6 4 4 8-8" />
+          <path d="M15 7h6v6" />
+        </svg>
+      ),
       title: "Strategic Consulting & Growth Planning",
       desc: "Digital roadmapping, audience acquisition funnels, and technical advisory to ensure your software drives revenue.",
       link: "/services",
@@ -70,7 +94,9 @@ export default function HomePage() {
                 className="p-6 border flex flex-col justify-between"
               >
                 <div>
-                  <div className="text-3xl mb-4">{item.icon}</div>
+                  <div className={`icon-badge ${item.badgeClass} mb-5`}>
+                    {item.icon}
+                  </div>
                   <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                     {item.title}
                   </h3>
@@ -112,7 +138,11 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <TiltCard maxTilt={5} className="p-8 border">
-              <div className="text-3xl mb-4">💬</div>
+              <div className="icon-badge icon-peach mb-5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+              </div>
               <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                 Plain English Collaboration
               </h4>
@@ -123,7 +153,12 @@ export default function HomePage() {
             </TiltCard>
 
             <TiltCard maxTilt={5} className="p-8 border">
-              <div className="text-3xl mb-4">🛡️</div>
+              <div className="icon-badge icon-mint mb-5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
               <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                 100% Intellectual Property
               </h4>
@@ -134,7 +169,11 @@ export default function HomePage() {
             </TiltCard>
 
             <TiltCard maxTilt={5} className="p-8 border">
-              <div className="text-3xl mb-4">⚡</div>
+              <div className="icon-badge icon-blue mb-5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
               <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                 Direct Senior Engineering
               </h4>

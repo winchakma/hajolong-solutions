@@ -39,16 +39,11 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <TiltCard maxTilt={5} className="p-4 border">
                   <div className="flex items-center gap-4">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-lg shrink-0 border"
-                      style={{
-                        backgroundColor: "var(--bg-surface-elevated)",
-                        borderColor: "var(--neon-rose)",
-                        color: "var(--neon-rose)",
-                        boxShadow: "0 0 14px -3px var(--neon-rose)",
-                      }}
-                    >
-                      ✉️
+                    <div className="icon-badge icon-peach">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <rect x="2" y="4" width="20" height="16" rx="2.5" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
                     </div>
                     <div>
                       <div className="text-[11px] text-[var(--text-muted)] font-mono uppercase tracking-wider">
@@ -63,16 +58,11 @@ export default function ContactSection() {
 
                 <TiltCard maxTilt={5} className="p-4 border">
                   <div className="flex items-center gap-4">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-lg shrink-0 border"
-                      style={{
-                        backgroundColor: "var(--bg-surface-elevated)",
-                        borderColor: "var(--neon-cyan)",
-                        color: "var(--neon-cyan)",
-                        boxShadow: "0 0 14px -3px var(--neon-cyan)",
-                      }}
-                    >
-                      ⚡
+                    <div className="icon-badge icon-blue">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
                     </div>
                     <div>
                       <div className="text-[11px] text-[var(--text-muted)] font-mono uppercase tracking-wider">
@@ -87,16 +77,11 @@ export default function ContactSection() {
 
                 <TiltCard maxTilt={5} className="p-4 border">
                   <div className="flex items-center gap-4">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-lg shrink-0 border"
-                      style={{
-                        backgroundColor: "var(--bg-surface-elevated)",
-                        borderColor: "var(--neon-blue)",
-                        color: "var(--neon-blue)",
-                        boxShadow: "0 0 14px -3px var(--neon-blue)",
-                      }}
-                    >
-                      🛡️
+                    <div className="icon-badge icon-mint">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="m9 12 2 2 4-4" />
+                      </svg>
                     </div>
                     <div>
                       <div className="text-[11px] text-[var(--text-muted)] font-mono uppercase tracking-wider">
@@ -117,14 +102,8 @@ export default function ContactSection() {
                 >
                   <TiltCard maxTilt={5} className="p-4 border transition-all group-hover:border-[#0A66C2]">
                     <div className="flex items-center gap-4">
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border"
-                        style={{
-                          backgroundColor: "var(--bg-surface-elevated)",
-                          borderColor: "#0A66C2",
-                        }}
-                      >
-                        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                      <div className="icon-badge icon-blue">
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                           <rect width="24" height="24" rx="4" fill="#0A66C2" />
                           <path
                             d="M7.4 19H4.3V9.5h3.1V19zM5.85 8.2c-1 0-1.8-.8-1.8-1.8 0-1 .8-1.8 1.8-1.8 1 0 1.8.8 1.8 1.8 0 1-.8 1.8-1.8 1.8zM19.7 19h-3.1v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19H9.9V9.5h3v1.3h0c.4-.8 1.5-1.6 3-1.6 3.2 0 3.8 2.1 3.8 4.9V19z"
@@ -154,7 +133,9 @@ export default function ContactSection() {
               highlight={true}
             >
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[var(--neon-rose)] mb-2">
-                <span>⭐</span>
+                <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
                 <span>SATISFACTION COMMITMENT</span>
               </div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-normal">

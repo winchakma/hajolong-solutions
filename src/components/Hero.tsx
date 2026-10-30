@@ -210,7 +210,11 @@ export default function Hero() {
                 href="/solutions#ai-bots"
                 className="px-6 py-3.5 rounded-xl font-bold text-sm btn-secondary flex items-center gap-2"
               >
-                <span>🤖 Build an AI Bot</span>
+                <svg className="w-4 h-4 text-[var(--accent-highlight)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="4" y="6" width="16" height="12" rx="3" />
+                  <path d="M12 2v4M8 2h8M9 11v2m6-2v2M9 15h6" />
+                </svg>
+                <span>Build an AI Bot</span>
               </Link>
 
               <Link
@@ -658,29 +662,39 @@ export default function Hero() {
                 type="button"
                 onClick={() => {
                   setMascotMode("hi");
-                  setSpeech("👋 Hello! Welcome to Hajolong Solutions. Let's create something exceptional.");
+                  setSpeech("Hello! Welcome to Hajolong Solutions. Let's create something exceptional.");
                 }}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all inline-flex items-center gap-1.5 ${
                   mascotMode === "hi"
                     ? "btn-neon-active"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)]"
                 }`}
               >
-                👋 Say Hi
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0" />
+                  <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2" />
+                  <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
+                  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+                </svg>
+                <span>Say Hi</span>
               </button>
               <button
                 type="button"
                 onClick={() => {
                   setMascotMode("ai");
-                  setSpeech("🤖 AI Bot Mode active! We build custom intelligent bots that automate your customer service & tasks.");
+                  setSpeech("AI Bot Mode active! We build custom intelligent bots that automate your customer service & tasks.");
                 }}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all inline-flex items-center gap-1.5 ${
                   mascotMode === "ai"
                     ? "btn-neon-active"
                     : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)]"
                 }`}
               >
-                🤖 Build AI Bot
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="4" y="6" width="16" height="12" rx="3" />
+                  <path d="M12 2v4M8 2h8M9 11v2m6-2v2M9 15h6" />
+                </svg>
+                <span>Build AI Bot</span>
               </button>
             </div>
             <span className="text-[11px] text-[var(--text-muted)] mt-2">

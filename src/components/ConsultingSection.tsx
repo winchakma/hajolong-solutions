@@ -7,25 +7,52 @@ import TiltCard from "@/components/TiltCard";
 export default function ConsultingSection() {
   const pillars = [
     {
-      icon: "📈",
+      badgeClass: "icon-mint",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M3 17l6-6 4 4 8-8" />
+          <path d="M15 7h6v6" />
+        </svg>
+      ),
       title: "Audience & Customer Growth Strategy",
       desc: "We help you identify your highest-value audience, optimize your digital acquisition funnels, and build web platforms that convert visitors into paying clients.",
       accent: "var(--neon-cyan)",
     },
     {
-      icon: "🏗️",
+      badgeClass: "icon-peach",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <polygon points="12 2 2 7 12 12 22 7 12 2" />
+          <polyline points="2 12 12 17 22 12" />
+          <polyline points="2 17 12 22 22 17" />
+        </svg>
+      ),
       title: "Technology Stack Evaluation & Auditing",
       desc: "Stop paying for overpriced, bloated SaaS tools. We review your current infrastructure to eliminate duplicate software costs and dramatically accelerate system speed.",
       accent: "var(--neon-rose)",
     },
     {
-      icon: "🗺️",
+      badgeClass: "icon-blue",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <circle cx="6" cy="6" r="3" />
+          <circle cx="18" cy="18" r="3" />
+          <path d="M9 6h6.5a2.5 2.5 0 0 1 0 5h-7a2.5 2.5 0 0 0 0 5H15" />
+        </svg>
+      ),
       title: "Phased Digital Roadmapping",
       desc: "Avoid spending months without seeing results. We structure your software development into 2-week milestones so you see tangible progress from day one.",
       accent: "var(--neon-cyan)",
     },
     {
-      icon: "🤝",
+      badgeClass: "icon-lilac",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      ),
       title: "Dedicated Long-Term Advisory",
       desc: "Consider us your virtual Chief Technology Officer. We provide ongoing engineering guidance, code reviews, and scaling support as your business expands.",
       accent: "var(--neon-rose)",
@@ -110,14 +137,7 @@ export default function ConsultingSection() {
             />
 
             <div>
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5 border shadow-xl transition-all duration-300 group-hover:scale-110"
-                style={{
-                  backgroundColor: "var(--bg-surface-elevated)",
-                  borderColor: item.accent,
-                  boxShadow: `0 0 20px -3px ${item.accent}`,
-                }}
-              >
+              <div className={`icon-badge ${item.badgeClass} mb-5 group-hover:scale-105`}>
                 {item.icon}
               </div>
 

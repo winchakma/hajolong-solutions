@@ -11,6 +11,13 @@ export default function SolutionsPage() {
     {
       id: "web",
       num: "01",
+      badgeClass: "icon-blue",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2.5" />
+          <path d="M8 21h8M12 17v4M6 8h4m-4 3h8" />
+        </svg>
+      ),
       title: "Custom Web & Platform Development",
       description:
         "We build fast, responsive, and beautiful websites and web applications tailored precisely to your business needs—no bloated off-the-shelf templates.",
@@ -26,6 +33,13 @@ export default function SolutionsPage() {
     {
       id: "ai",
       num: "02",
+      badgeClass: "icon-lilac",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <rect x="4" y="6" width="16" height="12" rx="3" />
+          <path d="M12 2v4M8 2h8M9 11v2m6-2v2M9 15h6" />
+        </svg>
+      ),
       title: "Custom AI Bots & Workflow Automation",
       description:
         "Deploy intelligent AI bots that handle customer inquiries 24/7, qualify incoming leads, and automate repetitive tasks across your team.",
@@ -42,6 +56,13 @@ export default function SolutionsPage() {
     {
       id: "redesign",
       num: "03",
+      badgeClass: "icon-peach",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+      ),
       title: "System Redesign & Modernization",
       description:
         "Is your software slow, confusing, or outdated? We completely restructure clunky legacy tools into intuitive, modern systems your team will love.",
@@ -57,6 +78,13 @@ export default function SolutionsPage() {
     {
       id: "integration",
       num: "04",
+      badgeClass: "icon-mint",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+        </svg>
+      ),
       title: "Software & API System Integration",
       description:
         "Eliminate manual data entry by connecting your CRM, ERP, Stripe payments, inventory, and internal databases into a single synchronized hub.",
@@ -72,6 +100,14 @@ export default function SolutionsPage() {
     {
       id: "data",
       num: "05",
+      badgeClass: "icon-rose",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <ellipse cx="12" cy="5" rx="9" ry="3" />
+          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+        </svg>
+      ),
       title: "Data Control & Analytics Dashboards",
       description:
         "Take complete command of your company data with clean database structuring, automated reports, and clear visual business intelligence dashboards.",
@@ -131,9 +167,9 @@ export default function SolutionsPage() {
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
-                  <span className="font-mono text-xs font-bold text-[var(--neon-cyan)]">
-                    {sol.num}
-                  </span>
+                  <div className={`icon-badge ${sol.badgeClass}`}>
+                    {sol.icon}
+                  </div>
                   <span
                     className="text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
                     style={{

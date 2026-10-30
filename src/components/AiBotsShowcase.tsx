@@ -103,7 +103,12 @@ export default function AiBotsShowcase() {
               maxTilt={5}
               className="p-6 border transition-all duration-300"
             >
-              <div className="text-2xl mb-3">💬</div>
+              <div className="icon-badge icon-blue mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  <path d="M8 9h8M8 13h5" />
+                </svg>
+              </div>
               <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                 24/7 Smart Customer Support Bots
               </h3>
@@ -118,7 +123,13 @@ export default function AiBotsShowcase() {
               maxTilt={5}
               className="p-6 border transition-all duration-300"
             >
-              <div className="text-2xl mb-3">🎯</div>
+              <div className="icon-badge icon-peach mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
               <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                 Lead Capture & Automated Scheduling
               </h3>
@@ -133,7 +144,14 @@ export default function AiBotsShowcase() {
               maxTilt={5}
               className="p-6 border transition-all duration-300"
             >
-              <div className="text-2xl mb-3">🔄</div>
+              <div className="icon-badge icon-lilac mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <rect x="2" y="3" width="6" height="6" rx="1.5" />
+                  <rect x="16" y="3" width="6" height="6" rx="1.5" />
+                  <rect x="9" y="15" width="6" height="6" rx="1.5" />
+                  <path d="M5 9v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9M12 14v1" />
+                </svg>
+              </div>
               <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                 Multi-Channel Deployment
               </h3>
@@ -163,44 +181,28 @@ export default function AiBotsShowcase() {
                 borderColor: "var(--border-glass)",
               }}
             >
-              {/* 3D Neural Agent Interface Visual */}
-              <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-6 border" style={{ borderColor: "var(--border-glass)" }}>
-                <Image
-                  src="/images/ai_agent_interface.jpg"
-                  alt="Hajolong Neural AI Bot Interface"
-                  fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-surface)] via-transparent to-transparent opacity-70" />
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white">
-                    ⚡ AXIOM Neural Runtime v4.2
-                  </span>
-                  <span className="text-[10px] font-mono text-[var(--neon-cyan)] bg-black/70 px-2 py-0.5 rounded backdrop-blur-md border border-white/10">
-                    Live Telemetry
-                  </span>
-                </div>
-              </div>
-
               {/* Bot Header Bar */}
               <div className="flex items-center justify-between pb-5 border-b" style={{ borderColor: "var(--border-subtle)" }}>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-lg">
-                    🤖
+                  <div className="icon-badge icon-lilac">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <rect x="4" y="6" width="16" height="12" rx="3" />
+                      <path d="M12 2v4M8 2h8M9 11v2m6-2v2M9 15h6" />
+                    </svg>
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-[var(--text-primary)]">
                       Hajolong Assistant Bot
                     </h4>
-                    <span className="text-[11px] text-emerald-400 flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                       Live AI Agent • Online
                     </span>
                   </div>
                 </div>
 
-                <span className="text-[10px] font-mono px-2 py-1 rounded bg-[var(--bg-surface-elevated)] text-[var(--text-muted)] border border-[var(--border-subtle)]">
-                  Simulated Demo
+                <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-[var(--bg-surface-elevated)] text-[var(--text-muted)] border border-[var(--border-subtle)]">
+                  Interactive Demo
                 </span>
               </div>
 
@@ -208,15 +210,18 @@ export default function AiBotsShowcase() {
               <div className="py-6 space-y-4 min-h-[220px]">
                 {/* User Message */}
                 <div className="flex justify-end">
-                  <div className="bg-blue-600 text-white text-xs sm:text-sm px-4 py-2.5 rounded-2xl rounded-tr-none max-w-[85%] shadow-sm">
+                  <div className="bg-[#0052cc] text-white text-xs sm:text-sm px-4 py-2.5 rounded-2xl rounded-tr-none max-w-[85%] shadow-sm">
                     {demoScenarios[selectedPrompt].question}
                   </div>
                 </div>
 
                 {/* Bot Response */}
                 <div className="flex justify-start items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-blue-600/30 text-xs flex items-center justify-center shrink-0 mt-0.5">
-                    🤖
+                  <div className="w-8 h-8 rounded-xl icon-lilac flex items-center justify-center shrink-0 mt-0.5 border">
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <rect x="4" y="6" width="16" height="12" rx="3" />
+                      <path d="M12 2v4M9 11v2m6-2v2" />
+                    </svg>
                   </div>
                   <div
                     className="text-xs sm:text-sm px-4 py-3 rounded-2xl rounded-tl-none max-w-[85%] border shadow-sm"
