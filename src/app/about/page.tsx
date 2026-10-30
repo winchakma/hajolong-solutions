@@ -7,12 +7,10 @@ import TiltCard from "@/components/TiltCard";
 import OurStory from "@/components/OurStory";
 
 export default function AboutPage() {
-  const coreFounders = [
+  const teamMembers = [
     {
       name: "Win Chakma",
       role: "Founder, CEO & Lead Technical Architect",
-      focus: "Enterprise Systems Strategy & Executive Direction",
-      bio: "Directs company vision, senior engineering governance, client enterprise architectures, and overall technical strategy across all customer deployments.",
       image: "/images/win chakma.jpeg",
       tag: "Founder & CEO",
       initials: "WC",
@@ -21,42 +19,42 @@ export default function AboutPage() {
     {
       name: "Simon Chakma",
       role: "Co-Founder & Head of Operations (COO)",
-      focus: "Business Operations, Marketing Strategy & Consulting",
-      bio: "Directs company operations, client consulting engagements, digital marketing acquisition funnels, and executive commercial accounts.",
       image: "/images/simon chakma.jpeg",
-      tag: "Founding Partner",
+      tag: "Co-Founder",
       initials: "SC",
       accent: "var(--neon-cyan)",
     },
     {
       name: "Tushar Chakma",
       role: "Co-Founder & Strategic Investment Partner (CFO)",
-      focus: "Strategic Investment, Banking & Capital Governance",
-      bio: "Oversees capital governance, financial planning, commercial banking relationships, and corporate expansion investments.",
       image: "/images/tushar chakma.jpeg",
-      tag: "Founding Partner",
+      tag: "Co-Founder",
       initials: "TC",
       accent: "var(--neon-blue)",
     },
     {
       name: "Bhoumik Chakma",
-      role: "Technical Co-Founder, Deputy Technical Architect & Principal Full-Stack Engineer",
-      focus: "Core Systems Architecture, Cloud Platforms & Technical Continuity",
-      bio: "Co-leads senior engineering governance, client enterprise architectures, and overall technical execution. Directs mission-critical cloud backends, scalable platform delivery, and end-to-end full-stack software across customer deployments.",
+      role: "Technical Co-Founder & Deputy Technical Architect",
       image: "/images/bhoumik chakma.JPG",
-      tag: "Deputy Technical Lead",
+      tag: "Technical Co-Founder",
       initials: "BC",
       accent: "var(--neon-cyan)",
     },
     {
       name: "Durnibar Chakma",
-      role: "Technical Co-Founder, Systems Engineer & Head of 3D / UI/UX Systems",
-      focus: "Systematic Engineering, 3D Computing & Interface Architecture",
-      bio: "Bridges cutting-edge 3D interactive environments and modern UI/UX design systems with systematic full-stack software development and robust backend architectures.",
+      role: "Technical Co-Founder & Head of 3D / UI/UX Systems",
       image: "/images/durnibar_chakma_v2.png",
       tag: "Technical Co-Founder",
       initials: "DC",
       accent: "var(--neon-rose)",
+    },
+    {
+      name: "Jasmin Chakma",
+      role: "Operations & Project Delivery Lead",
+      image: "",
+      tag: "Operations & Delivery",
+      initials: "JC",
+      accent: "var(--neon-blue)",
     },
   ];
 
@@ -97,23 +95,22 @@ export default function AboutPage() {
         {/* Narrative & Guarantees */}
         <OurStory />
 
-        {/* Core 5 Founding Members */}
+        {/* Core Leadership & Engineering Team */}
         <div className="mt-24 pt-16 border-t" style={{ borderColor: "var(--border-subtle)" }}>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-mono font-bold text-[var(--neon-rose)] uppercase tracking-wider">
-              The Founders & Leadership (5 Core Members)
+              The Leadership & Engineering Team
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 text-[var(--text-primary)]">
-              Meet Our 5 Core Founding Leaders
+              Meet Our Leadership Team
             </h2>
             <p className="text-sm text-[var(--text-secondary)] mt-2">
-              You collaborate directly with the core founding partners engineering your
-              systems.
+              You collaborate directly with principal leaders and engineers building your systems.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {coreFounders.map((founder, idx) => (
+            {teamMembers.map((member, idx) => (
               <TiltCard
                 key={idx}
                 maxTilt={5}
@@ -128,11 +125,11 @@ export default function AboutPage() {
                       borderColor: "var(--border-glass)",
                     }}
                   >
-                    {founder.image ? (
+                    {member.image ? (
                       <div className="relative w-full h-full">
                         <Image
-                          src={founder.image}
-                          alt={founder.name}
+                          src={member.image}
+                          alt={member.name}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -145,14 +142,14 @@ export default function AboutPage() {
                           className="w-16 h-16 rounded-full mx-auto mb-2 flex items-center justify-center text-xl font-bold font-mono border"
                           style={{
                             backgroundColor: "var(--bg-surface)",
-                            borderColor: founder.accent,
-                            color: founder.accent,
+                            borderColor: member.accent,
+                            color: member.accent,
                           }}
                         >
-                          {founder.initials}
+                          {member.initials}
                         </div>
                         <span className="text-[11px] font-mono text-[var(--text-muted)] block">
-                          Executive Team
+                          Photo Coming Soon
                         </span>
                       </div>
                     )}
@@ -164,25 +161,22 @@ export default function AboutPage() {
                       style={{
                         backgroundColor: "var(--bg-surface-elevated)",
                         borderColor: "var(--border-subtle)",
-                        color: founder.accent,
+                        color: member.accent,
                       }}
                     >
-                      {founder.tag}
+                      {member.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-[var(--text-primary)] mb-0.5">
-                    {founder.name}
+                  <h3 className="text-base font-bold text-[var(--text-primary)] mb-1">
+                    {member.name}
                   </h3>
                   <div
-                    className="text-xs font-semibold mb-2"
-                    style={{ color: founder.accent }}
+                    className="text-xs font-semibold"
+                    style={{ color: member.accent }}
                   >
-                    {founder.role}
+                    {member.role}
                   </div>
-                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-normal">
-                    {founder.bio}
-                  </p>
                 </div>
 
                 <div className="pt-3 mt-4 border-t flex items-center justify-between" style={{ borderColor: "var(--border-subtle)" }}>
@@ -191,9 +185,9 @@ export default function AboutPage() {
                   </span>
                   <span
                     className="text-xs font-bold transition-transform group-hover:translate-x-1"
-                    style={{ color: founder.accent }}
+                    style={{ color: member.accent }}
                   >
-                    Executive &rarr;
+                    Team &rarr;
                   </span>
                 </div>
               </TiltCard>
