@@ -3,13 +3,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme, Theme } from "@/context/ThemeContext";
 import BrandLogo from "@/components/BrandLogo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -19,13 +17,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const themes: { id: Theme; label: string; color: string }[] = [
-    { id: "charcoal", label: "Neo Rose", color: "from-[#ff2d95] via-[#ffffff] to-[#007ba7]" },
-    { id: "sapphire", label: "Sapphire Mint", color: "from-[#0066ff] via-[#00e5ff] to-[#00f5a0]" },
-    { id: "violet", label: "Cyber Violet", color: "from-[#7c3aed] via-[#ec4899] to-[#00f5ff]" },
-    { id: "light", label: "Luxe Cream", color: "from-[#f6f3ed] via-[#0052cc] to-[#ea580c]" },
-  ];
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -77,37 +68,8 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right Action: Multi-Color Theme Switcher & Contact Button */}
+        {/* Right Action: Contact Button */}
         <div className="flex items-center gap-4">
-          {/* Multi-Color Switcher */}
-          <div
-            className="flex items-center gap-1 p-1 rounded-full border shadow-sm"
-            style={{
-              backgroundColor: "var(--bg-surface)",
-              borderColor: "var(--border-glass)",
-            }}
-            role="group"
-            aria-label="Color Palette Switcher"
-          >
-            {themes.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setTheme(t.id)}
-                title={`Switch to ${t.label} palette`}
-                className={`px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
-                  theme === t.id
-                    ? "btn-neon-active shadow-[0_0_12px_var(--neon-spotlight)]"
-                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-elevated)]"
-                }`}
-              >
-                <span
-                  className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${t.color}`}
-                />
-                <span className="hidden sm:inline">{t.label}</span>
-              </button>
-            ))}
-          </div>
-
           {/* Contact CTA */}
           <Link
             href="/contact"

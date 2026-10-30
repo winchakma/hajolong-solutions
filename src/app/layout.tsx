@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="charcoal"
+      data-theme="light"
       className={`${fontDisplay.variable} ${fontHeading.variable} ${fontSans.variable} ${fontMono.variable}`}
     >
       <body className="min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white bg-[var(--bg-deep)] text-[var(--text-primary)] font-sans relative">

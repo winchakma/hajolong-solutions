@@ -10,56 +10,6 @@ interface BrandLogoProps {
 }
 
 export default function BrandLogo({ className = "", size = "md" }: BrandLogoProps) {
-  const { theme } = useTheme();
-
-  // Emblem filter per theme (crisp, no bleeding neon glow)
-  const getEmblemStyle = () => {
-    switch (theme) {
-      case "charcoal": // Neo Rose theme
-        return {
-          filter: "hue-rotate(115deg) saturate(1.3)",
-        };
-      case "violet": // Cyber Violet theme
-        return {
-          filter: "hue-rotate(45deg) saturate(1.25)",
-        };
-      case "light": // Luxe Cream theme
-        return {
-          filter: "hue-rotate(0deg) saturate(1.1)",
-        };
-      case "sapphire": // Sapphire Mint theme
-      default:
-        return {
-          filter: "hue-rotate(-10deg) saturate(1.25)",
-        };
-    }
-  };
-
-  // "SOLUTIONS" subtitle color per theme (sharp letters, no textShadow bleed)
-  const getSolutionsColor = () => {
-    switch (theme) {
-      case "charcoal": // Neo Rose
-        return {
-          color: "var(--neon-rose)",
-        };
-      case "violet": // Cyber Violet
-        return {
-          color: "var(--neon-rose)",
-        };
-      case "light": // Luxe Cream
-        return {
-          color: "var(--accent-secondary)", // Royal Azure
-        };
-      case "sapphire": // Sapphire Mint
-      default:
-        return {
-          color: "var(--neon-cyan)",
-        };
-    }
-  };
-
-  const isLight = theme === "light";
-
   const dimensions = {
     sm: {
       emblem: "w-7 h-8",
@@ -89,7 +39,7 @@ export default function BrandLogo({ className = "", size = "md" }: BrandLogoProp
       {/* Dynamic Themed Emblem */}
       <div
         className={`relative ${dimensions.emblem} shrink-0 transition-all duration-500`}
-        style={getEmblemStyle()}
+        style={{ filter: "hue-rotate(0deg) saturate(1.1)" }}
       >
         <Image
           src="/images/hajolong_emblem.png"
@@ -104,9 +54,7 @@ export default function BrandLogo({ className = "", size = "md" }: BrandLogoProp
       {/* Dynamic Themed Wordmark */}
       <div className="flex flex-col justify-center leading-none">
         <span
-          className={`font-black font-heading transition-colors duration-300 ${dimensions.title} ${
-            isLight ? "text-[#181615]" : "text-white"
-          }`}
+          className={`font-black font-heading transition-colors duration-300 ${dimensions.title} text-[#181615]`}
         >
           HAJOLONG
         </span>
@@ -114,17 +62,17 @@ export default function BrandLogo({ className = "", size = "md" }: BrandLogoProp
         <div className="flex items-center gap-1.5 mt-0.5">
           <span
             className={`${dimensions.line} rounded-full transition-all duration-300`}
-            style={{ backgroundColor: getSolutionsColor().color }}
+            style={{ backgroundColor: "var(--accent-secondary)" }}
           />
           <span
             className={`font-mono font-extrabold uppercase transition-all duration-300 ${dimensions.sub}`}
-            style={getSolutionsColor()}
+            style={{ color: "var(--accent-secondary)" }}
           >
             SOLUTIONS
           </span>
           <span
             className={`${dimensions.line} rounded-full transition-all duration-300`}
-            style={{ backgroundColor: getSolutionsColor().color }}
+            style={{ backgroundColor: "var(--accent-secondary)" }}
           />
         </div>
       </div>

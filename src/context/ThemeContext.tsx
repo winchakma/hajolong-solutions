@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type Theme = "sapphire" | "light" | "charcoal" | "violet";
+export type Theme = "light";
 
 interface ThemeContextType {
   theme: Theme;
@@ -10,27 +10,22 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: "charcoal",
+  theme: "light",
   setTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("charcoal");
+  const [theme, setThemeState] = useState<Theme>("light");
 
   useEffect(() => {
-    const saved = localStorage.getItem("hajolong-theme") as Theme;
-    if (saved && ["sapphire", "light", "charcoal", "violet"].includes(saved)) {
-      setThemeState(saved);
-      document.documentElement.setAttribute("data-theme", saved);
-    } else {
-      document.documentElement.setAttribute("data-theme", "charcoal");
-    }
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("hajolong-theme", "light");
   }, []);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("hajolong-theme", newTheme);
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("hajolong-theme", "light");
   };
 
   return (
