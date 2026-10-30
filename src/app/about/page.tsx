@@ -11,7 +11,7 @@ export default function AboutPage() {
     {
       name: "Win Chakma",
       role: "Founder, CEO & Lead Technical Architect",
-      image: "/images/win chakma.jpeg",
+      image: "/images/team_win_chakma.jpg",
       tag: "Founder & CEO",
       initials: "WC",
       accent: "var(--neon-rose)",
@@ -19,7 +19,7 @@ export default function AboutPage() {
     {
       name: "Simon Chakma",
       role: "Co-Founder & Head of Operations (COO)",
-      image: "/images/simon chakma.jpeg",
+      image: "/images/team_simon_chakma.jpg",
       tag: "Co-Founder",
       initials: "SC",
       accent: "var(--neon-cyan)",
@@ -27,7 +27,7 @@ export default function AboutPage() {
     {
       name: "Tushar Chakma",
       role: "Co-Founder & Strategic Investment Partner (CFO)",
-      image: "/images/tushar chakma.jpeg",
+      image: "/images/team_tushar_chakma.jpg",
       tag: "Co-Founder",
       initials: "TC",
       accent: "var(--neon-blue)",
@@ -35,7 +35,7 @@ export default function AboutPage() {
     {
       name: "Bhoumik Chakma",
       role: "Technical Co-Founder & Deputy Technical Architect",
-      image: "/images/bhoumik chakma.JPG",
+      image: "/images/team_bhoumik_chakma.jpg",
       tag: "Technical Co-Founder",
       initials: "BC",
       accent: "var(--neon-cyan)",
@@ -43,7 +43,7 @@ export default function AboutPage() {
     {
       name: "Durnibar Chakma",
       role: "Technical Co-Founder & Head of 3D / UI/UX Systems",
-      image: "/images/durnibar_chakma_v2.png",
+      image: "/images/team_durnibar_chakma.jpg",
       tag: "Technical Co-Founder",
       initials: "DC",
       accent: "var(--neon-rose)",
@@ -119,7 +119,7 @@ export default function AboutPage() {
                 <div>
                   {/* Portrait Photo Container */}
                   <div
-                    className="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden mb-4 border flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.01]"
+                    className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-4 border flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.01]"
                     style={{
                       backgroundColor: "var(--bg-surface-elevated)",
                       borderColor: "var(--border-glass)",
@@ -132,7 +132,7 @@ export default function AboutPage() {
                           alt={member.name}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                           priority={idx < 2}
                         />
                       </div>
