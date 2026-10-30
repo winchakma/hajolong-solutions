@@ -63,13 +63,28 @@ export default function Footer() {
 
           <div>
             <h5 className="text-xs font-heading font-bold text-[var(--accent-highlight)] uppercase tracking-wider mb-3">
-              Global Presence
+              Direct Contact
             </h5>
             <ul className="space-y-2 text-xs text-[var(--text-secondary)]">
-              <li><span>🇺🇸 Silicon Valley, California</span></li>
-              <li><span>🇩🇪 Frankfurt, Germany</span></li>
-              <li><span>🇯🇵 Tokyo, Japan</span></li>
-              <li><span>🇸🇬 Singapore Hub</span></li>
+              <li>
+                <a
+                  href="mailto:contact@hajolong.com"
+                  className="hover:text-[var(--text-primary)] transition-colors font-mono"
+                >
+                  contact@hajolong.com
+                </a>
+              </li>
+              <li className="text-[var(--text-muted)]">
+                Response SLA: Within 2 Hours
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-[var(--accent-highlight)] hover:underline inline-flex items-center gap-1 font-semibold mt-1"
+                >
+                  Start a Conversation &rarr;
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
