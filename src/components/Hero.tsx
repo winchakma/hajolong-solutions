@@ -335,11 +335,11 @@ export default function Hero() {
 
               {/* 3D Floating Parallax Badges */}
               <div
-                className="absolute top-12 -right-4 sm:-right-8 z-20 px-3.5 py-2 rounded-xl border backdrop-blur-xl shadow-lg flex items-center gap-2.5"
+                className="absolute top-6 -right-4 sm:-right-10 z-20 px-3.5 py-2 rounded-xl border backdrop-blur-xl shadow-lg flex items-center gap-2.5"
                 style={{
                   backgroundColor: "var(--bg-surface-glass)",
                   borderColor: "var(--border-glass)",
-                  transform: `translateZ(30px) rotateY(${rotY * 0.8}deg)`,
+                  transform: `translateZ(45px) rotateY(${rotY * 0.7}deg)`,
                 }}
               >
                 <span className="text-base">⚡</span>
@@ -355,11 +355,11 @@ export default function Hero() {
               </div>
 
               <div
-                className="absolute bottom-16 -left-4 sm:-left-8 z-20 px-3.5 py-2 rounded-xl border backdrop-blur-xl shadow-lg flex items-center gap-2.5"
+                className="absolute bottom-20 -left-4 sm:-left-10 z-20 px-3.5 py-2 rounded-xl border backdrop-blur-xl shadow-lg flex items-center gap-2.5"
                 style={{
                   backgroundColor: "var(--bg-surface-glass)",
                   borderColor: "var(--border-glass)",
-                  transform: `translateZ(25px) rotateX(${rotX * 0.8}deg)`,
+                  transform: `translateZ(40px) rotateX(${rotX * 0.7}deg)`,
                 }}
               >
                 <span className="text-base">🛡️</span>
@@ -369,19 +369,52 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* 3D Rotating Holographic Orbital Ring */}
-              <div className="holographic-orbital-ring" />
-
-              {/* Subtle Pedestal Backdrop */}
+              {/* 3D Pedestal Base & Dynamic Ground Shadow Under Robot's Boots */}
               <div
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full opacity-35 blur-2xl pointer-events-none"
+                className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[310px] h-[90px] pointer-events-none z-0"
+                style={{
+                  transform: `translateX(calc(-50% + ${bodyShiftX * 0.55}px)) rotateX(74deg) rotateZ(${rotY * 0.5}deg)`,
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                {/* Outer 3D Platform Ring */}
+                <div
+                  className="absolute inset-0 rounded-full border-2"
+                  style={{
+                    borderColor: "var(--border-accent)",
+                    background:
+                      "radial-gradient(ellipse at center, rgba(56, 189, 248, 0.22) 0%, rgba(0, 123, 167, 0.10) 55%, transparent 78%)",
+                    boxShadow: "0 14px 32px rgba(0, 0, 0, 0.35), inset 0 0 24px rgba(56, 189, 248, 0.18)",
+                  }}
+                />
+                {/* Inner 3D Mechanical Pedestal Ring */}
+                <div
+                  className="absolute inset-4 rounded-full border border-dashed"
+                  style={{
+                    borderColor: "var(--neon-cyan)",
+                    opacity: 0.55,
+                  }}
+                />
+                {/* Dynamic Ground Contact Shadow Under Boots */}
+                <div
+                  className="absolute inset-x-10 inset-y-5 rounded-full blur-md"
+                  style={{
+                    background: "radial-gradient(ellipse at center, rgba(10, 18, 35, 0.55) 0%, transparent 72%)",
+                    transform: `translate(${lookX * 10}px, ${lookY * 6}px)`,
+                  }}
+                />
+              </div>
+
+              {/* Subtle Ambient Stage Glow Behind Robot */}
+              <div
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full opacity-30 blur-2xl pointer-events-none"
                 style={{
                   background:
                     "radial-gradient(circle, var(--glow-cyan) 0%, var(--glow-blue) 45%, transparent 75%)",
                 }}
               />
 
-              {/* 3D Interactive Full-Body Character Container (No CSS keyframe override on transform!) */}
+              {/* 3D Interactive Full-Body Character Container (True preserve-3d Volumetric Stack) */}
               <div
                 className="relative w-full h-full flex items-center justify-center z-10"
                 style={{
@@ -389,21 +422,60 @@ export default function Hero() {
                   transformStyle: "preserve-3d",
                 }}
               >
-                {/* Waving Mascot Character Rig (Hi Mode — Exact robot2_clean.png Character) */}
+                {/* Waving Mascot Character Rig (Hi Mode — Exact robot2_clean.png Character with 3D Back Volume) */}
                 <div
-                  className={`relative w-[86%] aspect-[830/1100] transition-opacity duration-300 drop-shadow-2xl ${
+                  className={`relative w-[86%] aspect-[830/1100] ${
                     mascotMode === "hi" ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none hidden"
                   }`}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  {/* 1. Torso & Legs Layer */}
+                  {/* 0. 3D Volumetric Back-Shell ("Back Build") Extrusion Layers Behind Torso */}
+                  <img
+                    src="/images/robot_hi_torso.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: `translate3d(${-lookX * 14}px, ${-lookY * 9}px, -28px) scale(0.99)`,
+                      filter: "brightness(0.38) saturate(1.4) contrast(1.2) drop-shadow(0 18px 24px rgba(0,0,0,0.38))",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_hi_torso.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: `translate3d(${-lookX * 9}px, ${-lookY * 6}px, -18px) scale(0.995)`,
+                      filter: "brightness(0.56) saturate(1.3)",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_hi_torso.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: `translate3d(${-lookX * 4.5}px, ${-lookY * 3}px, -9px)`,
+                      filter: "brightness(0.76) saturate(1.15)",
+                    }}
+                    draggable={false}
+                  />
+
+                  {/* 1. Front Torso & Legs Layer (Z = 0px) */}
                   <img
                     src="/images/robot_hi_torso.png"
                     alt="Hajolong Solutions Mascot AXIOM"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: "translateZ(0px)",
+                    }}
                     draggable={false}
                   />
 
-                  {/* 2. Articulated Viewer's Right Arm Layer (Pivots at Right Shoulder 72.53% 55.27%) */}
+                  {/* 2. Articulated Viewer's Right Arm Layer (Z = 18px + Back Extrusion) */}
                   <img
                     src="/images/robot_hi_arm_right.png"
                     alt=""
@@ -411,12 +483,24 @@ export default function Hero() {
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
                     style={{
                       transformOrigin: "72.53% 55.27%",
-                      transform: `rotate(${hiRightArmAngle}deg)`,
+                      transform: `translate3d(${-lookX * 5}px, ${-lookY * 3}px, 8px) rotate(${hiRightArmAngle}deg)`,
+                      filter: "brightness(0.55) saturate(1.25)",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_hi_arm_right.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transformOrigin: "72.53% 55.27%",
+                      transform: `translateZ(18px) rotate(${hiRightArmAngle}deg)`,
                     }}
                     draggable={false}
                   />
 
-                  {/* 3. Articulated Viewer's Left Waving Arm Layer (Pivots at Left Shoulder 34.46% 49.64%) */}
+                  {/* 3. Articulated Viewer's Left Waving Arm Layer (Z = 32px + Back Extrusion) */}
                   <img
                     src="/images/robot_hi_arm.png"
                     alt=""
@@ -424,31 +508,75 @@ export default function Hero() {
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
                     style={{
                       transformOrigin: "34.46% 49.64%",
-                      transform: `rotate(${hiLeftArmAngle}deg)`,
+                      transform: `translate3d(${-lookX * 6}px, ${-lookY * 4}px, 20px) rotate(${hiLeftArmAngle}deg)`,
+                      filter: "brightness(0.55) saturate(1.25)",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_hi_arm.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transformOrigin: "34.46% 49.64%",
+                      transform: `translateZ(32px) rotate(${hiLeftArmAngle}deg)`,
                     }}
                     draggable={false}
                   />
 
-                  {/* 4. Independent Articulated Head + Live Visor Eyes/Mouth (Pivots at Neck 56.0% 45.8%) */}
+                  {/* 4. Independent Articulated Head + 3D Helmet Back-Shell + Live Visor (Z = 26px) */}
                   <div
                     className="absolute inset-0 w-full h-full pointer-events-none select-none"
                     style={{
                       transformOrigin: "56.0% 45.8%",
-                      transform: `translate(${headShiftX}px, ${headShiftY}px) rotate(${headRot}deg)`,
+                      transform: `translate3d(${headShiftX}px, ${headShiftY}px, 26px) rotate(${headRot}deg)`,
+                      transformStyle: "preserve-3d",
                     }}
                   >
+                    {/* 3D Back-Shell of Helmet ("Back Build" when tilting head left/right/up/down) */}
                     <img
                       src="/images/robot_hi_head.png"
                       alt=""
                       aria-hidden="true"
                       className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                      style={{
+                        transform: `translate3d(${-lookX * 14}px, ${-lookY * 10}px, -22px) scale(0.985)`,
+                        filter: "brightness(0.42) saturate(1.35)",
+                      }}
+                      draggable={false}
+                    />
+                    <img
+                      src="/images/robot_hi_head.png"
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                      style={{
+                        transform: `translate3d(${-lookX * 7}px, ${-lookY * 5}px, -11px) scale(0.992)`,
+                        filter: "brightness(0.68) saturate(1.2)",
+                      }}
                       draggable={false}
                     />
 
-                    {/* Live Mouse-Tracking Eyes & Mouth inside Visor (Exact 830x1100 Pixel Space) */}
+                    {/* Main Front Helmet Layer */}
+                    <img
+                      src="/images/robot_hi_head.png"
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                      style={{
+                        transform: "translateZ(0px)",
+                      }}
+                      draggable={false}
+                    />
+
+                    {/* Live Mouse-Tracking Eyes & Mouth inside Visor (Floating at Z = +10px) */}
                     <svg
                       viewBox="0 0 830 1100"
                       className="absolute inset-0 w-full h-full pointer-events-none select-none"
+                      style={{
+                        transform: "translateZ(10px)",
+                      }}
                     >
                       <defs>
                         <clipPath id="hiVisorClip">
@@ -543,21 +671,60 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* AI Companion Mascot Character Rig (AI Mode — Exact robot.png Character) */}
+                {/* AI Companion Mascot Character Rig (AI Mode — Exact robot.png Character with Full 3D Legs & Back Volume) */}
                 <div
-                  className={`relative w-[86%] aspect-[830/1100] transition-opacity duration-300 drop-shadow-2xl ${
+                  className={`relative w-[86%] aspect-[830/1100] ${
                     mascotMode === "ai" ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none hidden"
                   }`}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  {/* 1. AI Torso Layer */}
+                  {/* 0. 3D Volumetric Back-Shell ("Back Build") Extrusion Layers Behind AI Torso & Legs */}
+                  <img
+                    src="/images/robot_ai_torso.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: `translate3d(${-lookX * 14}px, ${-lookY * 9}px, -28px) scale(0.99)`,
+                      filter: "brightness(0.38) saturate(1.4) contrast(1.2) drop-shadow(0 18px 24px rgba(0,0,0,0.38))",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_ai_torso.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: `translate3d(${-lookX * 9}px, ${-lookY * 6}px, -18px) scale(0.995)`,
+                      filter: "brightness(0.56) saturate(1.3)",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_ai_torso.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: `translate3d(${-lookX * 4.5}px, ${-lookY * 3}px, -9px)`,
+                      filter: "brightness(0.76) saturate(1.15)",
+                    }}
+                    draggable={false}
+                  />
+
+                  {/* 1. Front AI Torso & Legs Layer (Z = 0px) */}
                   <img
                     src="/images/robot_ai_torso.png"
                     alt="Hajolong Solutions AI Bot Assistant"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transform: "translateZ(0px)",
+                    }}
                     draggable={false}
                   />
 
-                  {/* 2. Articulated AI Left Claw Arm Layer (Pivots at Left Shoulder 30.36% 59.55%) */}
+                  {/* 2. Articulated AI Left Claw Arm Layer (Z = 28px + Back Extrusion) */}
                   <img
                     src="/images/robot_ai_arm_left.png"
                     alt=""
@@ -565,12 +732,24 @@ export default function Hero() {
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
                     style={{
                       transformOrigin: "30.36% 59.55%",
-                      transform: `rotate(${aiLeftArmAngle}deg)`,
+                      transform: `translate3d(${-lookX * 6}px, ${-lookY * 4}px, 16px) rotate(${aiLeftArmAngle}deg)`,
+                      filter: "brightness(0.55) saturate(1.25)",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_ai_arm_left.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transformOrigin: "30.36% 59.55%",
+                      transform: `translateZ(28px) rotate(${aiLeftArmAngle}deg)`,
                     }}
                     draggable={false}
                   />
 
-                  {/* 3. Articulated AI Right Claw Arm Layer (Pivots at Right Shoulder 69.28% 58.36%) */}
+                  {/* 3. Articulated AI Right Claw Arm Layer (Z = 32px + Back Extrusion) */}
                   <img
                     src="/images/robot_ai_arm.png"
                     alt=""
@@ -578,31 +757,75 @@ export default function Hero() {
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
                     style={{
                       transformOrigin: "69.28% 58.36%",
-                      transform: `rotate(${aiRightArmAngle}deg)`,
+                      transform: `translate3d(${-lookX * 6}px, ${-lookY * 4}px, 20px) rotate(${aiRightArmAngle}deg)`,
+                      filter: "brightness(0.55) saturate(1.25)",
+                    }}
+                    draggable={false}
+                  />
+                  <img
+                    src="/images/robot_ai_arm.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                    style={{
+                      transformOrigin: "69.28% 58.36%",
+                      transform: `translateZ(32px) rotate(${aiRightArmAngle}deg)`,
                     }}
                     draggable={false}
                   />
 
-                  {/* 4. Independent Articulated AI Head + Live Visor Eyes/Mouth (Pivots at Neck 52.4% 52.0%) */}
+                  {/* 4. Independent Articulated AI Head + 3D Helmet Back-Shell + Live Visor (Z = 26px) */}
                   <div
                     className="absolute inset-0 w-full h-full pointer-events-none select-none"
                     style={{
                       transformOrigin: "52.4% 52.0%",
-                      transform: `translate(${headShiftX}px, ${headShiftY}px) rotate(${headRot}deg)`,
+                      transform: `translate3d(${headShiftX}px, ${headShiftY}px, 26px) rotate(${headRot}deg)`,
+                      transformStyle: "preserve-3d",
                     }}
                   >
+                    {/* 3D Back-Shell of AI Helmet ("Back Build") */}
                     <img
                       src="/images/robot_ai_head.png"
                       alt=""
                       aria-hidden="true"
                       className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                      style={{
+                        transform: `translate3d(${-lookX * 14}px, ${-lookY * 10}px, -22px) scale(0.985)`,
+                        filter: "brightness(0.42) saturate(1.35)",
+                      }}
+                      draggable={false}
+                    />
+                    <img
+                      src="/images/robot_ai_head.png"
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                      style={{
+                        transform: `translate3d(${-lookX * 7}px, ${-lookY * 5}px, -11px) scale(0.992)`,
+                        filter: "brightness(0.68) saturate(1.2)",
+                      }}
                       draggable={false}
                     />
 
-                    {/* Live Mouse-Tracking Round Eyes & Smile inside AI Visor */}
+                    {/* Main Front AI Helmet Layer */}
+                    <img
+                      src="/images/robot_ai_head.png"
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
+                      style={{
+                        transform: "translateZ(0px)",
+                      }}
+                      draggable={false}
+                    />
+
+                    {/* Live Mouse-Tracking Round Eyes & Smile inside AI Visor (Z = +10px) */}
                     <svg
                       viewBox="0 0 830 1100"
                       className="absolute inset-0 w-full h-full pointer-events-none select-none"
+                      style={{
+                        transform: "translateZ(10px)",
+                      }}
                     >
                       <defs>
                         <clipPath id="aiVisorClip">
