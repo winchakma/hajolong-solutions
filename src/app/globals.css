@@ -59,6 +59,50 @@ html[data-theme="light"] {
     var(--bg-deep);
 }
 
+/* ============================================================
+   Dark Mode (High-Tech Enterprise Obsidian)
+   ============================================================ */
+html[data-theme="dark"] {
+  --bg-deep: #090d16;
+  --bg-canvas: #0e1320;
+  --bg-surface: #131b2e;
+  --bg-surface-elevated: #1a243d;
+  --bg-surface-glass: rgba(19, 27, 46, 0.88);
+
+  --accent-primary: #0052cc;
+  --accent-primary-gradient: linear-gradient(135deg, #0052cc 0%, #3b82f6 100%);
+  --accent-primary-hover: linear-gradient(135deg, #0044b3 0%, #2563eb 100%);
+  --accent-secondary: #f97316;
+  --accent-highlight: #38bdf8;
+  --accent-cyan: #38bdf8;
+
+  --neon-cyan: #38bdf8;
+  --neon-rose: #f97316;
+  --neon-blue: #60a5fa;
+  --glow-neon: 0 10px 24px rgba(0, 0, 0, 0.35);
+  --neon-spotlight: rgba(56, 189, 248, 0.08);
+
+  --glow-cyan: rgba(56, 189, 248, 0.15);
+  --glow-blue: rgba(96, 165, 250, 0.12);
+  --glow-subtle: rgba(56, 189, 248, 0.06);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(56, 189, 248, 0.4);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --sweep-center: #38bdf8;
+
+  --nav-bg: rgba(9, 13, 22, 0.92);
+  --mesh-gradient: 
+    radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 82% 28%, rgba(0, 82, 204, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 75%, rgba(96, 165, 250, 0.06) 0%, transparent 50%),
+    var(--bg-deep);
+}
+
 * {
   box-sizing: border-box;
 }

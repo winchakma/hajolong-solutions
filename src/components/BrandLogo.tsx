@@ -54,7 +54,7 @@ export default function BrandLogo({ className = "", size = "md" }: BrandLogoProp
       {/* Dynamic Themed Wordmark */}
       <div className="flex flex-col justify-center leading-none">
         <span
-          className={`font-black font-heading transition-colors duration-300 ${dimensions.title} text-[#181615]`}
+          className={`font-black font-heading transition-colors duration-300 ${dimensions.title} text-[var(--text-primary)]`}
         >
           HAJOLONG
         </span>

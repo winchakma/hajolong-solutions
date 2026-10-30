@@ -4,11 +4,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import BrandLogo from "@/components/BrandLogo";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,8 +70,34 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right Action: Contact Button */}
-        <div className="flex items-center gap-4">
+        {/* Right Action: Contact Button & Theme Toggle */}
+        <div className="flex items-center gap-3">
+          {/* Light / Dark Mode Toggle */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            className="p-2.5 rounded-xl border transition-all duration-200 flex items-center justify-center hover:scale-105 active:scale-95"
+            style={{
+              backgroundColor: "var(--bg-surface-elevated)",
+              borderColor: "var(--border-glass)",
+              color: "var(--text-primary)",
+            }}
+          >
+            {theme === "light" ? (
+              /* Moon icon for switching to dark */
+              <svg className="w-4 h-4 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            ) : (
+              /* Sun icon for switching to light */
+              <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            )}
+          </button>
+
           {/* Contact CTA */}
           <Link
             href="/contact"
@@ -123,6 +151,21 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <div className="flex items-center justify-between pt-2 border-t mt-1" style={{ borderColor: "var(--border-subtle)" }}>
+            <span className="text-xs font-medium text-[var(--text-secondary)]">Theme</span>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="px-3 py-1.5 rounded-lg border text-xs font-semibold flex items-center gap-2"
+              style={{
+                backgroundColor: "var(--bg-surface-elevated)",
+                borderColor: "var(--border-glass)",
+                color: "var(--text-primary)",
+              }}
+            >
+              {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+            </button>
+          </div>
           <Link
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}

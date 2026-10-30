@@ -52,8 +52,16 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="light"
+      suppressHydrationWarning
       className={`${fontDisplay.variable} ${fontHeading.variable} ${fontSans.variable} ${fontMono.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("hajolong-theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white bg-[var(--bg-deep)] text-[var(--text-primary)] font-sans relative">
         {/* Global Ambient Low Background Neon Lights */}
         <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none">
