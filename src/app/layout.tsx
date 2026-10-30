@@ -41,6 +41,15 @@ const fontMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "HAJOLONG SOLUTIONS | Custom Software, AI Bots & System Integration",
   description: "Hajolong Solutions engineers custom web platforms, intelligent AI bots, legacy software redesigns, and enterprise systems that scale businesses.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+    ],
+  },
 };
 
 export default function RootLayout({
