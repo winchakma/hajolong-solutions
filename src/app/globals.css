@@ -157,23 +157,23 @@ html[data-theme="light"] .neon-text-sweep {
 }
 
 /* ============================================================
-   Clean, Simple Button System (Neutral Luxe Cream — No Color Fill)
+   Clean, Simple Solid Blue Button System
    ============================================================ */
 .btn-primary {
-  background: var(--bg-surface-elevated);
-  color: var(--text-primary);
-  border: 1px solid var(--border-glass);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: #0052cc;
+  color: #ffffff;
+  border: 1px solid #0044b3;
+  box-shadow: 0 3px 10px rgba(0, 82, 204, 0.22);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
 .btn-primary:hover {
-  background: var(--bg-surface);
-  border-color: rgba(24, 22, 21, 0.25);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-  color: var(--text-primary);
+  background: #0044b3;
+  border-color: #003894;
+  box-shadow: 0 6px 16px rgba(0, 82, 204, 0.32);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -187,9 +187,9 @@ html[data-theme="light"] .neon-text-sweep {
 
 .btn-secondary:hover {
   background: var(--bg-surface);
-  border-color: rgba(24, 22, 21, 0.25);
+  border-color: var(--border-accent);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-  color: var(--text-primary);
+  color: #0052cc;
   transform: translateY(-2px);
 }
 
@@ -200,10 +200,10 @@ button:not([disabled]) {
 
 /* Active tab / pill */
 .btn-neon-active {
-  background: var(--bg-surface-elevated) !important;
-  color: var(--text-primary) !important;
-  border: 1px solid rgba(24, 22, 21, 0.2) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+  background: #0052cc !important;
+  color: #ffffff !important;
+  border: 1px solid #0044b3 !important;
+  box-shadow: 0 3px 10px rgba(0, 82, 204, 0.22) !important;
 }
 
 @keyframes float-slow {
