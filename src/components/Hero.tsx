@@ -317,22 +317,6 @@ export default function Hero() {
               style={{ perspective: "1000px" }}
               onClick={handleMascotClick}
             >
-              {/* Dynamic Speech Bubble */}
-              <div
-                className="absolute -top-4 sm:-top-8 left-1/2 -translate-x-1/2 z-30 w-[90%] max-w-[340px] px-4 py-3 rounded-2xl border shadow-xl backdrop-blur-xl transition-all duration-300"
-                style={{
-                  backgroundColor: "var(--bg-surface-glass)",
-                  borderColor: "var(--border-glass)",
-                }}
-              >
-                <div className="flex items-start gap-2.5">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 mt-1.5 shrink-0 animate-ping" />
-                  <p className="text-xs sm:text-sm font-medium leading-snug text-[var(--text-primary)]">
-                    {speech}
-                  </p>
-                </div>
-              </div>
-
               {/* 3D Floating Parallax Badges */}
               <div
                 className="absolute top-10 -right-4 sm:-right-8 z-20 px-3.5 py-2 rounded-xl border backdrop-blur-xl shadow-lg flex items-center gap-2.5"
