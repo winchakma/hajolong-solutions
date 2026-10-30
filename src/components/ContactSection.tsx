@@ -21,7 +21,11 @@ export default function ContactSection() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || "N/A"}\nService Needed: ${formData.service}\n\nProject Details / Goals:\n${formData.message}`
     );
-    window.location.href = `mailto:contact@hajolong.com?subject=${subject}&body=${body}`;
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=contact@hajolong.com&su=${subject}&body=${body}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
     setSubmitted(true);
   };
 
@@ -45,7 +49,9 @@ export default function ContactSection() {
               {/* Contact Info Cards with 3D TiltCard */}
               <div className="space-y-4">
                 <a
-                  href="mailto:contact@hajolong.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@hajolong.com&su=Project%20Inquiry%20%E2%80%94%20Hajolong%20Solutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block group"
                 >
                   <TiltCard maxTilt={5} className="p-4 border transition-all group-hover:border-[var(--accent-primary)]">

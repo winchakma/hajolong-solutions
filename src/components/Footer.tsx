@@ -75,7 +75,9 @@ export default function Footer() {
               <ul className="space-y-2.5 text-xs text-[var(--text-secondary)]">
                 <li>
                   <a
-                    href="mailto:contact@hajolong.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@hajolong.com&su=Project%20Inquiry%20%E2%80%94%20Hajolong%20Solutions"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-[var(--accent-highlight)] transition-colors inline-flex items-center gap-2 font-medium"
                   >
                     <svg className="w-3.5 h-3.5 shrink-0 text-[var(--accent-highlight)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
