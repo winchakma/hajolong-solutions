@@ -30,13 +30,13 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-mesh">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 bg-mesh">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Hero */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-12">
           <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-lg backdrop-blur-xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-sm backdrop-blur-xl transition-all hover:scale-105"
             style={{
               backgroundColor: "var(--bg-surface-elevated)",
               borderColor: "var(--neon-cyan)",
@@ -51,7 +51,7 @@ export default function ServicesPage() {
             <span>STRATEGY & ADVISORY</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-[var(--text-primary)]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 text-[var(--text-primary)]">
             Consulting, Marketing &{" "}
             <span className="neon-text-sweep">Business Growth.</span>
           </h1>
@@ -67,8 +67,8 @@ export default function ServicesPage() {
         <ConsultingSection />
 
         {/* 4-Step Process with 3D TiltCards */}
-        <div className="mt-20 pt-16 border-t" style={{ borderColor: "var(--border-subtle)" }}>
-          <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="mt-14 sm:mt-16 pt-10 sm:pt-12 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+          <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-mono font-bold text-[var(--neon-cyan)] uppercase tracking-wider">
               How We Work
             </span>
@@ -107,7 +107,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Luminous Consultation Banner */}
-        <div className="mt-20 pt-16 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+        <div className="mt-14 sm:mt-16 pt-10 sm:pt-12 border-t" style={{ borderColor: "var(--border-subtle)" }}>
           <div
             className="p-10 sm:p-14 rounded-3xl border text-center relative overflow-hidden transition-all hover:scale-[1.01]"
             style={{

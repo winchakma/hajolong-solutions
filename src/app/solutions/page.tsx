@@ -87,13 +87,13 @@ export default function SolutionsPage() {
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-mesh">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 bg-mesh">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Hero */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-12">
           <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-lg backdrop-blur-xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-sm backdrop-blur-xl transition-all hover:scale-105"
             style={{
               backgroundColor: "var(--bg-surface-elevated)",
               borderColor: "var(--neon-cyan)",
@@ -108,7 +108,7 @@ export default function SolutionsPage() {
             <span>ENGINEERING EXCELLENCE</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-[var(--text-primary)]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 text-[var(--text-primary)]">
             Technology Solutions Designed for{" "}
             <span className="neon-text-sweep">Real Business Impact.</span>
           </h1>
@@ -121,7 +121,7 @@ export default function SolutionsPage() {
         </div>
 
         {/* 5 Solutions Grid with 3D TiltCards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-14 sm:mb-16">
           {solutions.map((sol) => (
             <TiltCard
               key={sol.id}
@@ -205,12 +205,12 @@ export default function SolutionsPage() {
         </div>
 
         {/* Dedicated Interactive AI Bots Showcase Section */}
-        <div className="rounded-3xl border overflow-hidden p-2 sm:p-4 my-12" style={{ borderColor: "var(--border-glass)" }}>
+        <div className="rounded-3xl border overflow-hidden p-2 sm:p-4 my-8 sm:my-10" style={{ borderColor: "var(--border-glass)" }}>
           <AiBotsShowcase />
         </div>
 
         {/* Luminous Consultation Banner */}
-        <div className="mt-20 pt-16 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+        <div className="mt-14 sm:mt-16 pt-10 sm:pt-12 border-t" style={{ borderColor: "var(--border-subtle)" }}>
           <div
             className="p-10 sm:p-14 rounded-3xl border text-center relative overflow-hidden transition-all hover:scale-[1.01]"
             style={{

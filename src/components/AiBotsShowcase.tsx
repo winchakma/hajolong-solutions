@@ -54,11 +54,11 @@ export default function AiBotsShowcase() {
   };
 
   return (
-    <section id="ai-bots" className="py-24 relative overflow-hidden bg-mesh">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="ai-bots" className="py-8 sm:py-12 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4">
         
         {/* Section Header with Multi-Layer Specular Neon Glow */}
-        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 relative">
           {/* Ambient Neon Spotlight Glow Behind Header */}
           <div
             className="pointer-events-none absolute -top-14 left-1/2 -translate-x-1/2 w-[90%] sm:w-[500px] h-44 rounded-full opacity-40 blur-3xl"

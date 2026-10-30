@@ -144,7 +144,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-mesh"
+      className="relative pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-36 lg:pb-20 overflow-hidden bg-mesh"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

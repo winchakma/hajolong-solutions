@@ -40,10 +40,10 @@ export default function HomePage() {
       <Hero />
 
       {/* 2. Core Solutions Overview */}
-      <section className="py-20 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="py-12 sm:py-16 border-t" style={{ borderColor: "var(--border-subtle)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
             <div>
               <span className="text-xs font-mono font-bold text-[var(--accent-highlight)] uppercase tracking-wider">
                 Our Core Expertise
@@ -94,10 +94,10 @@ export default function HomePage() {
       </section>
 
       {/* 3. Why Hajolong Solutions */}
-      <section className="py-20 bg-mesh border-t" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="py-12 sm:py-16 bg-mesh border-t" style={{ borderColor: "var(--border-subtle)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs font-mono font-bold text-[var(--accent-highlight)] uppercase tracking-wider">
               The Hajolong Standard
             </span>
@@ -110,7 +110,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <TiltCard maxTilt={5} className="p-8 border">
               <div className="text-3xl mb-4">💬</div>
               <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
@@ -149,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Action Banner */}
-      <section className="py-20 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+      <section className="py-12 sm:py-16 border-t" style={{ borderColor: "var(--border-subtle)" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className="p-10 sm:p-14 rounded-3xl border text-center relative overflow-hidden transition-all hover:scale-[1.01]"

@@ -5,13 +5,13 @@ import ContactSection from "@/components/ContactSection";
 
 export default function ContactPage() {
   return (
-    <div className="pt-32 pb-24 bg-mesh">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-20 bg-mesh">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Hero */}
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-lg backdrop-blur-xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-sm backdrop-blur-xl transition-all hover:scale-105"
             style={{
               backgroundColor: "var(--bg-surface-elevated)",
               borderColor: "var(--neon-rose)",

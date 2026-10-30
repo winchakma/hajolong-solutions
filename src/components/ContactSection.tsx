@@ -19,43 +19,11 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-mesh">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="contact" className="relative">
+      {/* 2-Column Contact Container */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-5xl items-start">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-lg backdrop-blur-xl transition-all hover:scale-105"
-            style={{
-              backgroundColor: "var(--bg-surface-elevated)",
-              borderColor: "var(--neon-rose)",
-              boxShadow: "0 0 16px var(--neon-spotlight)",
-              color: "var(--accent-highlight)",
-            }}
-          >
-            <span
-              className="w-2 h-2 rounded-full animate-pulse-dot"
-              style={{ backgroundColor: "var(--neon-rose)" }}
-            />
-            <span>DIRECT ENGAGEMENT</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 text-[var(--text-primary)]">
-            Let’s Build Something{" "}
-            <span className="text-gradient neon-text-sweep">Exceptional Together.</span>
-          </h2>
-
-          <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed font-normal">
-            Ready to build a custom website, deploy an AI bot, or modernize your
-            company’s software? Send us a message and our technical directors will
-            respond within 2 hours.
-          </p>
-        </div>
-
-        {/* 2-Column Contact Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-start">
-          
-          {/* Left Details */}
+        {/* Left Details */}
           <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
             <div>
               <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3">
@@ -422,8 +390,6 @@ export default function ContactSection() {
           </div>
 
         </div>
-
-      </div>
-    </section>
+    </div>
   );
 }
