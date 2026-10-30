@@ -112,29 +112,20 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {coreFounders.map((founder, idx) => (
               <TiltCard
                 key={idx}
-                maxTilt={7}
-                className="p-8 border flex flex-col justify-between group relative overflow-hidden"
+                maxTilt={5}
+                className="p-5 border flex flex-col justify-between group relative overflow-hidden"
               >
-                {/* Top Ambient Glow Line */}
-                <div
-                  className="pointer-events-none absolute top-0 left-0 right-0 h-1 transition-opacity duration-300 opacity-60 group-hover:opacity-100"
-                  style={{
-                    background: `linear-gradient(90deg, transparent, ${founder.accent}, transparent)`,
-                  }}
-                />
-
                 <div>
-                  {/* Portrait Photo Container with 3D Holographic Border */}
+                  {/* Portrait Photo Container */}
                   <div
-                    className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 border flex items-center justify-center shadow-inner group-hover:scale-[1.02] transition-transform duration-300"
+                    className="relative w-full h-48 sm:h-52 rounded-xl overflow-hidden mb-4 border flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.01]"
                     style={{
                       backgroundColor: "var(--bg-surface-elevated)",
-                      borderColor: founder.accent,
-                      boxShadow: `0 0 25px -6px ${founder.accent}, inset 0 0 20px rgba(0,0,0,0.5)`,
+                      borderColor: "var(--border-glass)",
                     }}
                   >
                     {founder.image ? (
@@ -144,82 +135,65 @@ export default function AboutPage() {
                           alt={founder.name}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                           priority={idx < 2}
                         />
                       </div>
                     ) : (
-                      <>
-                        {/* Glowing ambient ring for placeholder */}
+                      <div className="text-center p-4 relative z-10">
                         <div
-                          className="absolute inset-0 opacity-25 pointer-events-none z-10"
+                          className="w-16 h-16 rounded-full mx-auto mb-2 flex items-center justify-center text-xl font-bold font-mono border"
                           style={{
-                            background: `radial-gradient(circle at center, ${founder.accent} 0%, transparent 70%)`,
+                            backgroundColor: "var(--bg-surface)",
+                            borderColor: founder.accent,
+                            color: founder.accent,
                           }}
-                        />
-                        <div className="text-center p-6 relative z-10">
-                          <div
-                            className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-extrabold font-mono border shadow-2xl transition-all duration-300 group-hover:scale-110"
-                            style={{
-                              backgroundColor: "var(--bg-surface)",
-                              borderColor: founder.accent,
-                              color: founder.accent,
-                              boxShadow: `0 0 30px -4px ${founder.accent}`,
-                            }}
-                          >
-                            {founder.initials}
-                          </div>
-                          <span className="text-xs font-mono font-bold tracking-wider text-[var(--text-primary)] block mb-1">
-                            LEADERSHIP TEAM
-                          </span>
-                          <span className="text-[11px] font-mono text-[var(--text-muted)] block">
-                            Photo Placeholder Ready
-                          </span>
+                        >
+                          {founder.initials}
                         </div>
-                      </>
+                        <span className="text-[11px] font-mono text-[var(--text-muted)] block">
+                          Executive Team
+                        </span>
+                      </div>
                     )}
                   </div>
 
-                  <div className="flex items-center mb-3">
+                  <div className="flex items-center mb-2">
                     <span
-                      className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded border"
+                      className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded border"
                       style={{
                         backgroundColor: "var(--bg-surface-elevated)",
-                        borderColor: founder.accent,
+                        borderColor: "var(--border-subtle)",
                         color: founder.accent,
-                        boxShadow: `0 0 12px -2px ${founder.accent}`,
                       }}
                     >
                       {founder.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-1">
+                  <h3 className="text-base font-bold text-[var(--text-primary)] mb-0.5">
                     {founder.name}
                   </h3>
                   <div
-                    className="text-xs font-semibold mb-3"
+                    className="text-xs font-semibold mb-2"
                     style={{ color: founder.accent }}
                   >
                     {founder.role}
                   </div>
-                  <div className="text-[11px] font-mono text-[var(--text-muted)] mb-4">
-                    Focus: {founder.focus}
-                  </div>
-                  <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-normal">
+                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-normal">
                     {founder.bio}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-6 border-t flex items-center justify-between" style={{ borderColor: "var(--border-subtle)" }}>
-                  <span className="text-[11px] text-[var(--text-muted)] font-mono">
+                <div className="pt-3 mt-4 border-t flex items-center justify-between" style={{ borderColor: "var(--border-subtle)" }}>
+                  <span className="text-[10px] text-[var(--text-muted)] font-mono">
                     Hajolong Solutions
                   </span>
                   <span
                     className="text-xs font-bold transition-transform group-hover:translate-x-1"
                     style={{ color: founder.accent }}
                   >
-                    Executive Team &rarr;
+                    Executive &rarr;
                   </span>
                 </div>
               </TiltCard>

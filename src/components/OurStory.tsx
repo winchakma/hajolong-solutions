@@ -56,27 +56,12 @@ export default function OurStory() {
               <span className="text-gradient neon-text-sweep">Engineered for Scale.</span>
             </h2>
 
-            <div className="space-y-4 text-base text-[var(--text-secondary)] font-normal leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-[var(--text-secondary)] font-normal leading-relaxed">
               <p>
-                Too many businesses are stuck between two extremes: sluggish consulting
-                giants that charge six figures before writing a single line of code, and
-                fragmented freelancers who disappear when production bugs hit.
+                Too many businesses are stuck between sluggish consulting agencies that charge six figures before writing code, and fragmented freelancers who disappear when production bugs hit.
               </p>
               <p>
-                <strong className="text-[var(--text-primary)] font-semibold">Hajolong Solutions</strong> was
-                founded by <strong className="text-[var(--text-primary)] font-semibold">Win Chakma</strong> to
-                deliver a better model—assembling an elite five-partner leadership team combining deep systems
-                engineering, operational discipline, and next-gen visual computing.
-              </p>
-              <p>
-                Alongside <strong className="text-[var(--text-primary)] font-semibold">Simon Chakma</strong> leading
-                operations & execution, <strong className="text-[var(--text-primary)] font-semibold">Tushar Chakma</strong> steering
-                strategic investment, <strong className="text-[var(--text-primary)] font-semibold">Bhoumik Chakma</strong> serving as
-                deputy technical architect & principal full-stack lead, and <strong className="text-[var(--text-primary)] font-semibold">Durnibar Chakma</strong> driving
-                systematic engineering & 3D computing, we build enterprise-grade software and custom AI bots delivered in weeks, not years.
-              </p>
-              <p>
-                From modernizing legacy workflows to deploying autonomous multi-agent AI systems, we don&apos;t just consult—we build the mission-critical digital backbone powering your company&apos;s growth.
+                <strong className="text-[var(--text-primary)] font-semibold">Hajolong Solutions</strong> was founded to deliver a better model: you work directly with principal engineers who architect, build, and deploy custom web platforms, autonomous AI bots, and modern cloud systems delivered in weeks, not years.
               </p>
             </div>
 
@@ -104,30 +89,29 @@ export default function OurStory() {
           </div>
 
           {/* Right Column: 4 Guarantees with 3D TiltCards */}
-          <div className="lg:col-span-6 space-y-4">
+          <div className="lg:col-span-6 space-y-3">
             {principles.map((item, idx) => (
               <TiltCard
                 key={idx}
-                maxTilt={6}
-                className="p-6 border transition-all duration-300"
+                maxTilt={5}
+                className="p-4 sm:p-4.5 border transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3.5">
                   <span
-                    className="font-mono text-xs font-extrabold px-2.5 py-1 rounded border shrink-0"
+                    className="font-mono text-xs font-bold px-2 py-0.5 rounded border shrink-0 mt-0.5"
                     style={{
                       backgroundColor: "var(--bg-surface-elevated)",
                       borderColor: "var(--neon-rose)",
                       color: "var(--neon-rose)",
-                      boxShadow: "0 0 10px var(--neon-spotlight)",
                     }}
                   >
                     {item.num}
                   </span>
                   <div>
-                    <h3 className="text-base font-bold text-[var(--text-primary)] mb-1.5">
+                    <h3 className="text-sm font-bold text-[var(--text-primary)] mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[var(--text-secondary)] font-normal leading-relaxed">
+                    <p className="text-xs text-[var(--text-secondary)] font-normal leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
