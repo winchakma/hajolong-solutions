@@ -396,7 +396,7 @@ export default function Hero() {
                 >
                   {/* 1. Torso & Legs Layer */}
                   <img
-                    src="/images/robot_hi_torso.png"
+                    src="/images/robot_hi_torso.png?v=3"
                     alt="Hajolong Solutions Mascot AXIOM"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
                     draggable={false}
@@ -404,7 +404,7 @@ export default function Hero() {
 
                   {/* 2. Articulated Viewer's Right Arm Layer (Pivots at Right Shoulder 72.53% 55.27%) */}
                   <img
-                    src="/images/robot_hi_arm_right.png"
+                    src="/images/robot_hi_arm_right.png?v=3"
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
@@ -417,7 +417,7 @@ export default function Hero() {
 
                   {/* 3. Articulated Viewer's Left Waving Arm Layer (Pivots at Left Shoulder 34.46% 49.64%) */}
                   <img
-                    src="/images/robot_hi_arm.png"
+                    src="/images/robot_hi_arm.png?v=3"
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
@@ -437,7 +437,7 @@ export default function Hero() {
                     }}
                   >
                     <img
-                      src="/images/robot_hi_head.png"
+                      src="/images/robot_hi_head.png?v=3"
                       alt=""
                       aria-hidden="true"
                       className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
@@ -550,7 +550,7 @@ export default function Hero() {
                 >
                   {/* 1. AI Torso & Legs Layer */}
                   <img
-                    src="/images/robot_ai_torso.png"
+                    src="/images/robot_ai_torso.png?v=3"
                     alt="Hajolong Solutions AI Bot Assistant"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
                     draggable={false}
@@ -558,7 +558,7 @@ export default function Hero() {
 
                   {/* 2. Articulated AI Left Claw Arm Layer (Pivots at Left Shoulder 30.36% 59.55%) */}
                   <img
-                    src="/images/robot_ai_arm_left.png"
+                    src="/images/robot_ai_arm_left.png?v=3"
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
@@ -571,7 +571,7 @@ export default function Hero() {
 
                   {/* 3. Articulated AI Right Claw Arm Layer (Pivots at Right Shoulder 69.28% 58.36%) */}
                   <img
-                    src="/images/robot_ai_arm.png"
+                    src="/images/robot_ai_arm.png?v=3"
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
@@ -591,7 +591,7 @@ export default function Hero() {
                     }}
                   >
                     <img
-                      src="/images/robot_ai_head.png"
+                      src="/images/robot_ai_head.png?v=3"
                       alt=""
                       aria-hidden="true"
                       className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
