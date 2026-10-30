@@ -70,8 +70,30 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right Action: Contact Button & Theme Toggle */}
-        <div className="flex items-center gap-3">
+        {/* Right Action: LinkedIn, Theme Toggle & Contact Button */}
+        <div className="flex items-center gap-2.5">
+          {/* Official LinkedIn Button */}
+          <a
+            href="https://www.linkedin.com/company/hajolong-solution/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hajolong Solutions on LinkedIn"
+            title="Follow Hajolong Solutions on LinkedIn"
+            className="p-2 rounded-xl border transition-all duration-200 flex items-center justify-center hover:scale-105 active:scale-95"
+            style={{
+              backgroundColor: "var(--bg-surface-elevated)",
+              borderColor: "var(--border-glass)",
+            }}
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="4" fill="#0A66C2" />
+              <path
+                d="M7.4 19H4.3V9.5h3.1V19zM5.85 8.2c-1 0-1.8-.8-1.8-1.8 0-1 .8-1.8 1.8-1.8 1 0 1.8.8 1.8 1.8 0 1-.8 1.8-1.8 1.8zM19.7 19h-3.1v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19H9.9V9.5h3v1.3h0c.4-.8 1.5-1.6 3-1.6 3.2 0 3.8 2.1 3.8 4.9V19z"
+                fill="white"
+              />
+            </svg>
+          </a>
+
           {/* Light / Dark Mode Toggle */}
           <button
             type="button"
@@ -166,6 +188,24 @@ export default function Navbar() {
               {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
             </button>
           </div>
+          <a
+            href="https://www.linkedin.com/company/hajolong-solution/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between py-2 text-xs font-semibold text-[var(--text-primary)]"
+          >
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="4" fill="#0A66C2" />
+                <path
+                  d="M7.4 19H4.3V9.5h3.1V19zM5.85 8.2c-1 0-1.8-.8-1.8-1.8 0-1 .8-1.8 1.8-1.8 1 0 1.8.8 1.8 1.8 0 1-.8 1.8-1.8 1.8zM19.7 19h-3.1v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19H9.9V9.5h3v1.3h0c.4-.8 1.5-1.6 3-1.6 3.2 0 3.8 2.1 3.8 4.9V19z"
+                  fill="white"
+                />
+              </svg>
+              <span>Follow on LinkedIn</span>
+            </span>
+            <span className="text-[var(--text-muted)] text-[11px]">&rarr;</span>
+          </a>
           <Link
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}

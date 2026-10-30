@@ -34,9 +34,9 @@ export default function AboutPage() {
     },
     {
       name: "Bhoumik Chakma",
-      role: "Technical Co-Founder & Deputy Technical Architect",
+      role: "Project Manager & Growth Marketing",
       image: "/images/team_bhoumik_chakma.jpg",
-      tag: "Technical Co-Founder",
+      tag: "Project & Marketing",
       initials: "BC",
       accent: "var(--neon-cyan)",
     },
@@ -50,9 +50,9 @@ export default function AboutPage() {
     },
     {
       name: "Jasmin Chakma",
-      role: "Lead Backend Developer & Systems Architecture",
+      role: "Technical Lead & Backend Architecture",
       image: "",
-      tag: "Lead Backend Developer",
+      tag: "Technical Lead",
       initials: "JC",
       accent: "var(--neon-blue)",
     },
