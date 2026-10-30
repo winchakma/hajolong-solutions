@@ -437,7 +437,7 @@ export default function Hero() {
                     }}
                   >
                     <img
-                      src="/images/robot_hi_head.png?v=3"
+                      src="/images/robot_hi_head.png?v=4"
                       alt=""
                       aria-hidden="true"
                       className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none"
