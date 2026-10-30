@@ -10,15 +10,15 @@ export default function AboutPage() {
   const teamMembers = [
     {
       name: "Win Chakma",
-      role: "Founder, CEO & Lead Technical Architect",
+      role: "Founder & Lead Technical Architect",
       image: "/images/team_win_chakma.jpg",
-      tag: "Founder & CEO",
+      tag: "Founder",
       initials: "WC",
       accent: "var(--neon-rose)",
     },
     {
       name: "Simon Chakma",
-      role: "Co-Founder & Head of Operations (COO)",
+      role: "Co-Founder & Head of Operations",
       image: "/images/team_simon_chakma.jpg",
       tag: "Co-Founder",
       initials: "SC",
@@ -26,7 +26,7 @@ export default function AboutPage() {
     },
     {
       name: "Tushar Chakma",
-      role: "Co-Founder & Strategic Investment Partner (CFO)",
+      role: "Co-Founder & Strategic Investment Partner",
       image: "/images/team_tushar_chakma.jpg",
       tag: "Co-Founder",
       initials: "TC",
@@ -42,7 +42,7 @@ export default function AboutPage() {
     },
     {
       name: "Durnibar Chakma",
-      role: "Technical Co-Founder & Head of 3D / UI/UX Systems",
+      role: "Technical Co-Founder & Head of UI/UX Systems",
       image: "/images/team_durnibar_chakma.jpg",
       tag: "Technical Co-Founder",
       initials: "DC",
@@ -50,9 +50,9 @@ export default function AboutPage() {
     },
     {
       name: "Jasmin Chakma",
-      role: "Operations & Project Delivery Lead",
+      role: "Lead Backend Developer & Systems Architecture",
       image: "",
-      tag: "Operations & Delivery",
+      tag: "Lead Backend Developer",
       initials: "JC",
       accent: "var(--neon-blue)",
     },

@@ -20,8 +20,8 @@ export default function SolutionsPage() {
         "High-Speed Mobile Optimization",
         "Search Engine & SEO Friendly",
       ],
+      stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
       badge: "Full-Stack Web",
-      image: "/images/cloud_dashboard_ui.jpg",
     },
     {
       id: "ai",
@@ -35,9 +35,9 @@ export default function SolutionsPage() {
         "Multi-Platform (Web, WhatsApp, Slack)",
         "Automated Lead Ingestion",
       ],
+      stack: ["Python", "OpenAI / Claude API", "LangChain", "FastAPI", "Vector DB"],
       badge: "AI Bots & Agents",
       featured: true,
-      image: "/images/ai_agent_interface.jpg",
     },
     {
       id: "redesign",
@@ -51,8 +51,8 @@ export default function SolutionsPage() {
         "Mobile-Responsive Interfaces",
         "Zero Loss of Existing Data",
       ],
+      stack: ["Full UI/UX Redesign", "Next.js", "Cloud Backends", "Zero Downtime"],
       badge: "Restructuring",
-      image: "/images/system_architecture_core.jpg",
     },
     {
       id: "integration",
@@ -66,8 +66,8 @@ export default function SolutionsPage() {
         "ERP & CRM Synchronization",
         "Automated Error Notifications",
       ],
+      stack: ["Stripe API", "REST & GraphQL", "Webhooks", "PostgreSQL", "CRM Sync"],
       badge: "Integration",
-      image: "/images/tech_consulting_command.jpg",
     },
     {
       id: "data",
@@ -81,8 +81,8 @@ export default function SolutionsPage() {
         "Safe Data Migration & Backups",
         "Clean Database Architecture",
       ],
+      stack: ["PostgreSQL", "Supabase", "Redis", "Real-Time BI", "Daily Backups"],
       badge: "Data Management",
-      image: "/images/cloud_dashboard_ui.jpg",
     },
   ];
 
@@ -150,29 +150,46 @@ export default function SolutionsPage() {
                   {sol.title}
                 </h3>
 
-                {sol.image && (
-                  <div className="relative w-full h-40 rounded-xl overflow-hidden mb-4 border shadow-inner" style={{ borderColor: "var(--border-glass)" }}>
-                    <Image
-                      src={sol.image}
-                      alt={sol.title}
-                      fill
-                      className="object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                  </div>
-                )}
-
                 <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 font-normal">
                   {sol.description}
                 </p>
 
-                <ul className="space-y-2 mb-8 border-t pt-4" style={{ borderColor: "var(--border-subtle)" }}>
-                  {sol.highlights.map((item, idx) => (
-                    <li key={idx} className="text-xs text-[var(--text-secondary)] flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "var(--neon-cyan)" }} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Deliverables list */}
+                <div className="mb-6 border-t pt-4" style={{ borderColor: "var(--border-subtle)" }}>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--text-muted)] block mb-2.5">
+                    Core Capabilities
+                  </span>
+                  <ul className="space-y-2">
+                    {sol.highlights.map((item, idx) => (
+                      <li key={idx} className="text-xs text-[var(--text-secondary)] flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "var(--neon-cyan)" }} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Production Stack */}
+                <div className="mb-8 pt-4 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--text-muted)] block mb-2.5">
+                    Production Stack
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {sol.stack.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="text-[11px] font-mono px-2.5 py-1 rounded border font-medium"
+                        style={{
+                          backgroundColor: "var(--bg-surface-elevated)",
+                          borderColor: "var(--border-glass)",
+                          color: "var(--text-primary)",
+                        }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <div className="pt-4 border-t" style={{ borderColor: "var(--border-subtle)" }}>
