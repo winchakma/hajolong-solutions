@@ -317,42 +317,6 @@ export default function Hero() {
               style={{ perspective: "1000px" }}
               onClick={handleMascotClick}
             >
-              {/* 3D Floating Parallax Badges */}
-              <div
-                className="absolute top-10 -right-4 sm:-right-8 z-20 px-3.5 py-2 rounded-xl border backdrop-blur-xl shadow-lg flex items-center gap-2.5"
-                style={{
-                  backgroundColor: "var(--bg-surface-glass)",
-                  borderColor: "var(--border-glass)",
-                  transform: `translateZ(30px) rotateY(${rotY * 0.6}deg)`,
-                }}
-              >
-                <span className="text-base">⚡</span>
-                <div>
-                  <div className="text-[11px] font-bold text-[var(--text-primary)]">24/7 AI Automation</div>
-                  <div
-                    className="text-[9px] font-mono font-semibold"
-                    style={{ color: "var(--neon-cyan)" }}
-                  >
-                    Trained on Your Data
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="absolute bottom-16 -left-4 sm:-left-8 z-20 px-3.5 py-2 rounded-xl border backdrop-blur-xl shadow-lg flex items-center gap-2.5"
-                style={{
-                  backgroundColor: "var(--bg-surface-glass)",
-                  borderColor: "var(--border-glass)",
-                  transform: `translateZ(25px) rotateX(${rotX * 0.6}deg)`,
-                }}
-              >
-                <span className="text-base">🛡️</span>
-                <div>
-                  <div className="text-[11px] font-bold text-[var(--text-primary)]">100% IP Ownership</div>
-                  <div className="text-[9px] font-mono text-[var(--text-muted)]">Zero Lock-In</div>
-                </div>
-              </div>
-
               {/* 3D Rotating Holographic Orbital Ring */}
               <div className="holographic-orbital-ring" />
 
