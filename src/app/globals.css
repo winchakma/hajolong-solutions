@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-display, 'Bricolage Grotesque'), sans-serif;
+  --font-heading: var(--font-heading, 'Outfit'), sans-serif;
+  --font-sans: var(--font-sans, 'Plus Jakarta Sans'), sans-serif;
+  --font-mono: var(--font-mono, 'JetBrains Mono'), monospace;
+}
+
+:root,
+html[data-theme="charcoal"] {
+  /* Jet Black Base (#0a0a0a) */
+  --bg-deep: #0a0a0a;
+  --bg-canvas: #0e0e11;
+  --bg-surface: #131317;
+  --bg-surface-elevated: #1a1a20;
+  --bg-surface-glass: rgba(14, 14, 18, 0.88);
+
+  /* Cerulean Blue (#007ba7) & Neon Rose (#ff2d95) Accents */
+  --accent-primary: #ff2d95;
+  --accent-primary-gradient: linear-gradient(135deg, #ff2d95 0%, #e01b7a 40%, #007ba7 100%);
+  --accent-primary-hover: linear-gradient(135deg, #ff4d9e 0%, #ff2d95 40%, #0095c7 100%);
+  --accent-secondary: #007ba7;
+  --accent-highlight: #ff2d95;
+  --accent-cyan: #007ba7;
+
+  /* 2026 Jet Black + Neon Rose + Cerulean Blue Tokens */
+  --neon-cyan: #ff2d95;
+  --neon-rose: #ff2d95;
+  --neon-blue: #007ba7;
+  --glow-neon: 0 12px 28px rgba(0, 0, 0, 0.35);
+  --neon-spotlight: rgba(255, 45, 149, 0.08);
+
+  --glow-cyan: rgba(255, 45, 149, 0.15);
+  --glow-blue: rgba(0, 123, 167, 0.15);
+  --glow-subtle: rgba(255, 45, 149, 0.08);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(255, 45, 149, 0.4);
+
+  /* Font Color Mix: Pure White (#ffffff), Cerulean Blue (#8ec5e6), and Neon Rose accents */
+  --text-primary: #ffffff;
+  --text-secondary: #9ec9e2; /* Soft Cerulean body text tone */
+  --text-muted: #647f92;
+
+  --nav-bg: rgba(10, 10, 10, 0.94);
+  --mesh-gradient: 
+    radial-gradient(circle at 18% 18%, rgba(255, 45, 149, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 82% 28%, rgba(0, 123, 167, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 50% 75%, rgba(255, 45, 149, 0.12) 0%, transparent 50%),
+    var(--bg-deep);
+}
+
+/* ============================================================
+   Theme 2: Sapphire Mint (Oceanic Quantum Triad)
+   3 Colors: Electric Sapphire Blue (#0066ff) + Hyper Cyan (#00e5ff) + Neon Mint Aqua (#00f5a0)
+   ============================================================ */
+html[data-theme="sapphire"] {
+  --bg-deep: #050a16;
+  --bg-canvas: #091122;
+  --bg-surface: #0e1a32;
+  --bg-surface-elevated: #152445;
+  --bg-surface-glass: rgba(14, 26, 50, 0.88);
+
+  /* 3-Color Dynamic Gradient */
+  --accent-primary: #00f5a0;
+  --accent-primary-gradient: linear-gradient(135deg, #0066ff 0%, #00e5ff 45%, #00f5a0 100%);
+  --accent-primary-hover: linear-gradient(135deg, #1a75ff 0%, #33edff 45%, #33f7b3 100%);
+  --accent-secondary: #00e5ff;
+  --accent-highlight: #00f5a0;
+  --accent-cyan: #00f5a0;
+
+  /* 2026 Sapphire Mint Tokens */
+  --neon-cyan: #00f5a0;
+  --neon-rose: #00e5ff;
+  --neon-blue: #0066ff;
+  --glow-neon: 0 12px 28px rgba(0, 0, 0, 0.35);
+  --neon-spotlight: rgba(0, 245, 160, 0.08);
+
+  --glow-cyan: rgba(0, 245, 160, 0.15);
+  --glow-blue: rgba(0, 102, 255, 0.15);
+  --glow-subtle: rgba(0, 245, 160, 0.08);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(0, 245, 160, 0.4);
+
+  /* Font Color Mix: Pure White (#ffffff), Soft Aqua Mint (#94ebd8), and Neon Mint */
+  --text-primary: #ffffff;
+  --text-secondary: #94ebd8;
+  --text-muted: #5e8f85;
+
+  --nav-bg: rgba(5, 10, 22, 0.94);
+  --mesh-gradient: 
+    radial-gradient(circle at 18% 18%, rgba(0, 245, 160, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 82% 28%, rgba(0, 102, 255, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 50% 75%, rgba(0, 229, 255, 0.12) 0%, transparent 50%),
+    var(--bg-deep);
+}
+
+/* ============================================================
+   Theme 3: Cyber Violet (Cyberpunk AI Triad)
+   3 Colors: Royal Amethyst (#7c3aed) + Electric Fuchsia (#ec4899) + Cyber Cyan (#00f5ff)
+   ============================================================ */
+html[data-theme="violet"] {
+  --bg-deep: #090514;
+  --bg-canvas: #0e0920;
+  --bg-surface: #150f2e;
+  --bg-surface-elevated: #1f1642;
+  --bg-surface-glass: rgba(21, 15, 46, 0.88);
+
+  /* 3-Color Dynamic Gradient */
+  --accent-primary: #00f5ff;
+  --accent-primary-gradient: linear-gradient(135deg, #7c3aed 0%, #ec4899 45%, #00f5ff 100%);
+  --accent-primary-hover: linear-gradient(135deg, #8b5cf6 0%, #f472b6 45%, #38bdf8 100%);
+  --accent-secondary: #ec4899;
+  --accent-highlight: #00f5ff;
+  --accent-cyan: #00f5ff;
+
+  /* 2026 Cyber Violet Tokens */
+  --neon-cyan: #00f5ff;
+  --neon-rose: #ec4899;
+  --neon-blue: #7c3aed;
+  --glow-neon: 0 12px 28px rgba(0, 0, 0, 0.35);
+  --neon-spotlight: rgba(0, 245, 255, 0.08);
+
+  --glow-cyan: rgba(0, 245, 255, 0.15);
+  --glow-blue: rgba(124, 58, 237, 0.15);
+  --glow-subtle: rgba(236, 72, 153, 0.08);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(0, 245, 255, 0.4);
+
+  /* Font Color Mix: Pure White (#ffffff), Soft Lavender (#d4c5f9), and Cyber Cyan */
+  --text-primary: #ffffff;
+  --text-secondary: #d4c5f9;
+  --text-muted: #8272a8;
+
+  --nav-bg: rgba(9, 5, 20, 0.94);
+  --mesh-gradient: 
+    radial-gradient(circle at 18% 18%, rgba(0, 245, 255, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 82% 28%, rgba(124, 58, 237, 0.26) 0%, transparent 40%),
+    radial-gradient(circle at 50% 75%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+    var(--bg-deep);
+}
+
+/* ============================================================
+   Theme 4: Luxe Cream (Cashmere Editorial Triad)
+   3 Colors: Royal Azure (#0052cc) + Sunset Amber (#ea580c) + Deep Warm Espresso (#181615)
+   Canvas: Warm Cashmere Cream (#f6f3ed) with Ceramic White (#ffffff) float cards
+   ============================================================ */
+html[data-theme="light"] {
+  --bg-deep: #f6f3ed;
+  --bg-canvas: #ede7dc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f2ede4;
+  --bg-surface-glass: rgba(255, 255, 255, 0.92);
+
+  /* 3-Color Dynamic Gradient */
+  --accent-primary: #0052cc;
+  --accent-primary-gradient: linear-gradient(135deg, #0052cc 0%, #4338ca 45%, #ea580c 100%);
+  --accent-primary-hover: linear-gradient(135deg, #0044b3 0%, #3730a3 45%, #c2410c 100%);
+  --accent-secondary: #ea580c;
+  --accent-highlight: #0052cc;
+  --accent-cyan: #ea580c;
+
+  /* Warm Luxe Tokens */
+  --neon-cyan: #0052cc;
+  --neon-rose: #ea580c;
+  --neon-blue: #4338ca;
+  --glow-neon: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --neon-spotlight: rgba(0, 82, 204, 0.06);
+
+  --glow-cyan: rgba(0, 82, 204, 0.12);
+  --glow-blue: rgba(234, 88, 12, 0.12);
+  --glow-subtle: rgba(234, 88, 12, 0.06);
+
+  --border-subtle: rgba(40, 30, 20, 0.08);
+  --border-glass: rgba(40, 30, 20, 0.12);
+  --border-accent: rgba(0, 82, 204, 0.35);
+
+  /* Font Color Mix: Deep Warm Espresso (#181615), Warm Stone (#57534e), and Azure accents */
+  --text-primary: #181615;
+  --text-secondary: #57534e;
+  --text-muted: #8a837b;
+  --sweep-center: #ea580c;
+
+  --nav-bg: rgba(246, 243, 237, 0.94);
+  --mesh-gradient: 
+    radial-gradient(circle at 18% 18%, rgba(234, 88, 12, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 82% 28%, rgba(0, 82, 204, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 75%, rgba(67, 56, 202, 0.08) 0%, transparent 50%),
+    var(--bg-deep);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 1. Display Font: Bricolage Grotesque — ONLY Hero H1, Huge Numbers, Main CTA Headlines */
+h1,
+.font-display {
+  font-family: var(--font-display), 'Bricolage Grotesque', sans-serif;
+  letter-spacing: -0.032em;
+}
+
+/* 2. Heading Font: Outfit — H2, H3, H4, Navigation, Card Titles, Section Titles */
+h2,
+h3,
+h4,
+nav a,
+.font-heading {
+  font-family: var(--font-heading), 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* 3. Body Font: Plus Jakarta Sans — Paragraphs, Buttons, Inputs, Forms, Footer, FAQ */
+p,
+button,
+input,
+textarea,
+select,
+label,
+footer,
+.font-sans {
+  font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 4. Mono Font: JetBrains Mono — ONLY Technical Labels, Percentages, API/AI/KPI Metadata, Badges */
+.font-mono,
+code,
+pre {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+}
+
+/* Custom Utilities */
+.bg-mesh {
+  background: var(--mesh-gradient);
+}
+
+.glass-card {
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.text-gradient {
+  background: var(--accent-primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Crisp Animated Gradient Text - Strictly Inside Letters (Zero Outer Glow Bleed) */
+@keyframes neon-text-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-text-sweep {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--neon-cyan) 0%, var(--accent-secondary) 50%, var(--neon-cyan) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neon-text-flow 5s ease-in-out infinite;
+  filter: none;
+}
+
+html[data-theme="light"] .neon-text-sweep {
+  filter: none;
+}
+
+/* ============================================================
+   Clean, Crisp Button System (No Bleeding Neon Glows)
+   ============================================================ */
+.btn-primary {
+  background: var(--accent-primary-gradient);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-hover);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  color: var(--neon-cyan);
+  transform: translateY(-2px);
+}
+
+/* Global button transition */
+button:not([disabled]) {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active tab / pill */
+.btn-neon-active {
+  background: var(--accent-primary-gradient) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.92); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* 3D Orbital Ring for Mascot */
+@keyframes orbit-spin {
+  from { transform: translateX(-50%) rotateX(72deg) rotate(0deg); }
+  to { transform: translateX(-50%) rotateX(72deg) rotate(360deg); }
+}
+
+.holographic-orbital-ring {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotateX(72deg);
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1px dashed var(--border-accent);
+  animation: orbit-spin 22s linear infinite;
+  pointer-events: none;
+}
+
+/* Low Background Ambient Neon Drifting Lights */
+@keyframes ambient-neon-drift-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(35px, 30px) scale(1.08); }
+}
+
+@keyframes ambient-neon-drift-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-30px, 40px) scale(1.06); }
+}
+
+@keyframes ambient-neon-drift-3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(25px, -35px) scale(1.05); }
+}
+
+.ambient-neon-orb-1 {
+  animation: ambient-neon-drift-1 20s ease-in-out infinite;
+}
+
+.ambient-neon-orb-2 {
+  animation: ambient-neon-drift-2 24s ease-in-out infinite;
+}
+
+.ambient-neon-orb-3 {
+  animation: ambient-neon-drift-3 28s ease-in-out infinite;
+}
+
+/* Eradicate Next.js dev indicator / "N" badge from all pages */
+nextjs-portal,
+#__next-build-watcher,
+[data-nextjs-toast],
+[data-nextjs-dev-indicator],
+[data-nextjs-dialog-overlay],
+div[data-nextjs-dev-tools-button],
+button[aria-label="Next.js Dev Tools"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+}
