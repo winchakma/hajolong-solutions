@@ -76,9 +76,13 @@ export default function Footer() {
                 <li>
                   <a
                     href="mailto:contact@hajolong.com"
-                    className="hover:text-[var(--text-primary)] transition-colors font-mono"
+                    className="hover:text-[var(--accent-highlight)] transition-colors inline-flex items-center gap-2 font-medium"
                   >
-                    contact@hajolong.com
+                    <svg className="w-3.5 h-3.5 shrink-0 text-[var(--accent-highlight)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="4" width="20" height="16" rx="2.5" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    <span>contact@hajolong.com</span>
                   </a>
                 </li>
                 <li className="text-[var(--text-muted)]">

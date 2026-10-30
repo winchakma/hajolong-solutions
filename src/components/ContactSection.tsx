@@ -15,6 +15,13 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(
+      `[Hajolong Solutions Inquiry] ${formData.service} — ${formData.company || formData.name}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || "N/A"}\nService Needed: ${formData.service}\n\nProject Details / Goals:\n${formData.message}`
+    );
+    window.location.href = `mailto:contact@hajolong.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -35,26 +42,32 @@ export default function ContactSection() {
                 realistic execution timelines.
               </p>
 
-              {/* 3 Contact Info Cards with 3D TiltCard */}
+              {/* Contact Info Cards with 3D TiltCard */}
               <div className="space-y-4">
-                <TiltCard maxTilt={5} className="p-4 border">
-                  <div className="flex items-center gap-4">
-                    <div className="icon-badge icon-peach">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                        <rect x="2" y="4" width="20" height="16" rx="2.5" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-[11px] text-[var(--text-muted)] font-mono uppercase tracking-wider">
-                        Direct Email
+                <a
+                  href="mailto:contact@hajolong.com"
+                  className="block group"
+                >
+                  <TiltCard maxTilt={5} className="p-4 border transition-all group-hover:border-[var(--accent-primary)]">
+                    <div className="flex items-center gap-4">
+                      <div className="icon-badge icon-peach">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                          <rect x="2" y="4" width="20" height="16" rx="2.5" />
+                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
                       </div>
-                      <div className="text-sm font-bold text-[var(--text-primary)]">
-                        contact@hajolong.com
+                      <div className="flex-1">
+                        <div className="text-[11px] text-[var(--text-muted)] font-mono uppercase tracking-wider">
+                          Direct Email
+                        </div>
+                        <div className="text-sm font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-highlight)] transition-colors flex items-center justify-between">
+                          <span>contact@hajolong.com</span>
+                          <span className="text-xs">&rarr;</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </TiltCard>
+                  </TiltCard>
+                </a>
 
                 <TiltCard maxTilt={5} className="p-4 border">
                   <div className="flex items-center gap-4">
